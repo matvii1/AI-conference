@@ -1,0 +1,29 @@
+@mixin mediaMobile {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin mediaTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaDesktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin mediaDesktop-big {
+  @media (min-width: 1281px) {
+    @content;
+  }
+}
+
+@mixin nav-shadow {
+  -webkit-box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.24);
+  -moz-box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.24);
+  box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.24);
+}

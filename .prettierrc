@@ -1,0 +1,15 @@
+{
+  "overrides": [
+    {
+      "files": "*.scss",
+      "options": {
+        "parser": "scss"
+      }
+    }
+  ],
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "semi": false,
+  "bracketSpacing": true,
+  "bracketSameLine": true
+}

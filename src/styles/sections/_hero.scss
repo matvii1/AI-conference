@@ -1,0 +1,38 @@
+@use "helpers" as *;
+
+.hero-outer {
+  position: relative;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  opacity: 1;
+
+  &__title {
+    opacity: 0.8;
+    position: relative;
+    z-index: 2;
+    background: color(black, 400);
+    color: color(white, 400);
+    padding: 1rem;
+    font-size: 3rem;
+    font-weight: 600;
+
+    @include mediaMobile {
+      font-size: 1rem;
+    }
+
+    @include mediaTablet {
+      font-size: 1.35rem;
+    }
+  }
+
+  &__timing {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: color(black, 300);
+  }
+}

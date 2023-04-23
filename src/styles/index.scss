@@ -1,0 +1,12 @@
+@use "./utils/container.scss";
+@use "./utils/normalize";
+@use "./sections/hero";
+@use "./sections//map";
+@use "./sections/particles";
+@use "./sections/nav";
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Roboto Mono", monospace;
+}

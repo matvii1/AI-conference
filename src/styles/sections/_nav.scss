@@ -1,0 +1,21 @@
+@use "./helpers" as *;
+
+.nav {
+  position: relative;
+  z-index: 5;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: color(black, 100);
+
+  @include nav-shadow;
+
+  &__list {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__link {
+  }
+}

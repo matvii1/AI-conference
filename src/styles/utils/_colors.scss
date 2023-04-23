@@ -1,0 +1,39 @@
+$theme-colors: (
+  black: (
+    100: hsl(0, 0%, 90%),
+    200: hsl(0, 0%, 40%),
+    300: hsl(0, 0%, 20%),
+    400: hsl(0, 0%, 0%),
+  ),
+  white: (
+    200: hsl(0, 0%, 600%),
+    300: hsl(0, 0%, 80%),
+    400: hsl(0, 0%, 100%),
+  ),
+  red: (
+    300: hsl(4, 62%, 65%),
+    400: hsl(4, 62%, 55%),
+    500: hsl(4, 62%, 45%),
+    700: hsl(4, 95%, 47%),
+  ),
+  pin: (
+    base: hsl(236, 78%, 33%)
+  )
+);
+
+@function color($color, $tone) {
+  @if map-has-key($theme-colors, $color) {
+    $color: map-get($theme-colors, $color);
+
+    @if map-has-key($color, $tone) {
+      $tone: map-get($color, $tone);
+      @return $tone;
+    }
+
+    @warn "unknown tone `#{$tone}` in color";
+    @return null;
+  }
+
+  @warn "unknown color `#{$color}` in palette";
+  @return null;
+}
