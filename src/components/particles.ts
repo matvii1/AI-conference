@@ -7,16 +7,25 @@ tsParticles.load("tsparticles", {
       },
       onHover: {
         enable: true,
-        mode: "repulse",
+        mode: "grab",
       },
     },
+
+    // modes
     modes: {
       push: {
-        quantity: 3,
+        quantity: 1,
+        particles_nb: 1
       },
       repulse: {
-        distance: 75,
+        distance: 20,
       },
+      grab: {
+        distance: 300,
+        line_linked: {
+          opacity: 0.1,
+        }
+      }
     },
   },
   particles: {
@@ -47,4 +56,10 @@ tsParticles.load("tsparticles", {
       max: 1,
     },
   },
+  number: {
+    value: 10,
+    density: {
+      enable: false
+    }
+  }
 })

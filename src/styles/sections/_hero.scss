@@ -30,9 +30,20 @@
     }
   }
 
+  &__desc {
+    // background: color(white, 400);
+    background: rgba(255, 255, 255, 0.75);
+    padding-block: 0.5rem;
+    margin-top: 1.4rem;
+    position: relative;
+    z-index: 2;
+  }
+
   &__timing {
     margin-top: 0.75rem;
     font-size: 0.85rem;
     color: color(black, 300);
+    position: relative;
+    z-index: 2;
   }
 }

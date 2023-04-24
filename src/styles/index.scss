@@ -4,9 +4,11 @@
 @use "./sections//map";
 @use "./sections/particles";
 @use "./sections/nav";
+@use "./sections/timetable";
+@use "./utils/vars" as *;
 
 body {
   min-width: 320px;
   min-height: 100vh;
-  font-family: "Roboto Mono", monospace;
+  font-family: $font-primary;
 }

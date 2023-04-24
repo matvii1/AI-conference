@@ -1,0 +1,82 @@
+@use "./helpers" as *;
+
+.timetable {
+  margin-top: $section-margin-top;
+
+  &__list {
+    margin-top: $section-within-margin-top;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__title {
+    text-align: center;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+
+  &__time {
+    font-family: $font-secondary;
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+    color: color(black, 200);
+    width: 30px;
+  }
+
+  &__content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    border-radius: 0.35rem;
+    background: color(white, 400);
+    box-shadow: inset -32px -32px 96px hsl(0, 0%, 95%),
+      inset 32px 32px 96px hsl(0, 0%, 97%);
+  }
+
+  &__content--img {
+    display: flex;
+  }
+
+  &__title {
+    font-size: 1.3rem;
+    font-family: $font-secondary;
+  }
+
+  &__desc {
+    line-height: 1.4;
+    font-size: 0.9rem;
+    font-family: $font-secondary;
+    margin-top: 1rem;
+  }
+
+  &__button {
+    margin-top: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 1.5rem;
+    background-color: color(white, 400);
+    border: 1px solid;
+    transition: color 0.1s ease-in-out, border-color 0.1s ease-in-out,
+      background-color 0.1s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      color: color(white, 400);
+      border-color: color(black, 400);
+      background-color: color(button, base);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 1rem;
+    z-index: 10;
+    height: 100px;
+    width: 100px;
+    top: 1rem;
+    left: 1rem;
+  }
+}
