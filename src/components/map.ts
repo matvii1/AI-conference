@@ -12,7 +12,7 @@ const PCU_CENTER: [number, number] = [PCU_LON, PCU_LAT]
 
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/streets-v12",
+  style: "mapbox://styles/mapbox/light-v11",
   center: PCU_CENTER,
   zoom: 12,
 })

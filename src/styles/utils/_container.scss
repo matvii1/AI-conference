@@ -1,21 +1,28 @@
-@use "./mixins.scss" as mixin;
-@use "./colors" as *;
+@use "../sections/helpers" as *;
 
 .container {
   margin: 0 auto;
 
-  @include mixin.mediaMobile {
+  @include mediaMobile {
     max-width: 460px;
-    padding-inline: 1rem;
+    padding-inline: $container-padding-inline;
   }
 
-  @include mixin.mediaTablet {
-    max-width: 700px;
-    padding-inline: 1rem;
+  @include mediaTablet {
+    max-width: 850px;
+    padding-inline: $container-padding-inline;
   }
 
-  @include mixin.mediaDesktop {
-    max-width: 900px;
-    padding-inline: 1rem;
+  @include mediaDesktop {
+    max-width: 1200px;
+    padding-inline: $container-padding-inline;
+  }
+}
+
+.nav-container {
+  @extend .container;
+
+  @include mediaMobile {
+    max-width: 100%;
   }
 }

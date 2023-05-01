@@ -1,0 +1,58 @@
+@use "./helpers" as *;
+
+.join-us {
+  margin-top: $section-margin-top;
+  max-width: 1300px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__grid {
+    margin-top: $section-within-margin-top;
+
+    @include mediaMobile {
+      display: grid;
+      grid-template-rows: auto;
+      gap: 1rem;
+    }
+
+    @include mediaTablet {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem;
+    }
+
+    @include mediaDesktop {
+      display: grid;
+      grid-template-columns: 400px auto;
+      column-gap: 2rem;
+    }
+  }
+}
+
+.map-wrapper {
+  flex-basis: 50%;
+  position: relative;
+  height: 500px;
+  overflow-x: hidden;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+}
+
+.map-pin {
+  font-size: 2rem;
+  color: color(button, base);
+}

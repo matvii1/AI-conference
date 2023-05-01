@@ -5,9 +5,14 @@
 
   &__list {
     margin-top: $section-within-margin-top;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    @include mediaTablet {
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    }
+
+    gap: 1.4rem 1.85rem;
   }
 
   &__title {
@@ -29,21 +34,23 @@
   }
 
   &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     padding: 1.5rem;
     flex-grow: 1;
     border-radius: 0.35rem;
     background: color(white, 400);
-    box-shadow: inset -32px -32px 96px hsl(0, 0%, 95%),
-      inset 32px 32px 96px hsl(0, 0%, 97%);
-  }
-
-  &__content--img {
-    display: flex;
+    box-shadow: inset -32px -32px 96px color(card-white, base),
+      inset 32px 32px 96px color(card-white, light);
   }
 
   &__title {
     font-size: 1.3rem;
     font-family: $font-secondary;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   &__desc {
@@ -54,29 +61,149 @@
   }
 
   &__button {
-    margin-top: 1.2rem;
-    padding: 0.8rem 1.5rem;
-    border-radius: 1.5rem;
-    background-color: color(white, 400);
-    border: 1px solid;
-    transition: color 0.1s ease-in-out, border-color 0.1s ease-in-out,
-      background-color 0.1s ease-in-out;
+    margin-top: 1.95rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: color(button, base);
+
+    background: none;
+    border: none;
 
     &:hover {
       cursor: pointer;
-      color: color(white, 400);
-      border-color: color(black, 400);
-      background-color: color(button, base);
+      color: color(button, base);
+    }
+
+    &:hover &__icon {
+      animation-name: move;
+      animation-duration: 0.55s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
     }
   }
 
   &__icon {
-    position: absolute;
+    position: relative;
+    top: -0.125rem;
+  }
+}
+
+.popup {
+  @extend .popup-styles;
+  font-family: $font-secondary;
+
+  &__content {
+    position: relative;
+    max-width: 540px;
+    min-height: 250px;
+    background-color: color(white, 400);
+    border-radius: 0.25rem;
+    padding: 4rem 2rem;
+
+    @include mediaTablet {
+      padding: 4rem;
+    }
+
+    @include mediaDesktop {
+      padding: 3.5rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+  }
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.2rem;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+
+    @include mediaTablet {
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 1.75rem;
+    }
+  }
+
+  &__time {
+    margin-right: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  &__img {
+    max-width: 100%;
+
+    @include mediaBigPhone {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    min-width: 45%;
+    max-height: 250px;
+    border-radius: 0.25rem;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__desc {
+    align-self: flex-start;
+    line-height: 1.5;
     font-size: 1rem;
-    z-index: 10;
-    height: 100px;
-    width: 100px;
-    top: 1rem;
-    left: 1rem;
+  }
+
+  &__close-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    aspect-ratio: 1;
+
+    padding: 0.25rem;
+    background: color(card-white, base);
+    border-radius: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    font-size: 1.4rem;
+  }
+}
+
+.active.popup {
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: 100;
+  transform: translateY(0);
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0.1rem);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

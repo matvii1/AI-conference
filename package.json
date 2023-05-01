@@ -17,6 +17,7 @@
     "mapbox-gl": "^2.14.1",
     "normalize.css": "^8.0.1",
     "sass": "^1.62.0",
+    "telegram-bot-api-client": "^1.0.23",
     "tsparticles-engine": "^2.9.3",
     "tsparticles-fireworks": "^2.9.3",
     "tsparticles-interaction-particles-links": "^2.9.3",

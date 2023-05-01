@@ -1,0 +1,138 @@
+@use "helpers" as *;
+
+$card-max-width: 428px;
+
+.join-us__form {
+  font-family: $font-secondary;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include mediaTablet {
+    align-items: center;
+  }
+
+  @include mediaDesktop {
+    align-items: center;
+  }
+}
+
+.form-inner-wrapper {
+  width: 100%;
+  max-width: $container-mobile-max-width;
+
+  @include mediaMobile {
+    padding: 0 1rem;
+  }
+
+  @include mediaTablet {
+    padding: 0 0 0 1rem;
+    width: 300px;
+  }
+  @include mediaDesktop {
+    width: 100%;
+  }
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.input-field {
+  @include mediaMobile {
+    width: 100%;
+  }
+
+  @include mediaTablet {
+    width: 100%;
+  }
+
+  padding: 1rem 1.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid color(white, 300);
+
+  &:focus,
+  &:active {
+    outline: none;
+    border: 1px solid rgb(6, 6, 173) !important;
+  }
+}
+
+.name-group--success,
+.email-group--success {
+  & .input-field {
+    border: 1px solid color(green, success);
+  }
+
+  & .input-label {
+    color: color(green, success);
+  }
+
+  & .input-helper-text {
+    color: color(green, success);
+  }
+}
+
+.name-group--error,
+.email-group--error {
+  & .input-field {
+    border: 1px solid color(red, error);
+  }
+
+  & .input-label {
+    color: color(red, error);
+  }
+
+  & .input-helper-text {
+    color: color(red, error);
+  }
+}
+
+.input-label {
+  font-size: 0.8rem;
+  position: absolute;
+  padding: 0.25rem;
+  left: 0.8rem;
+  top: -0.7rem;
+  color: color(black, 300);
+  background: white;
+}
+
+.input-helper-text {
+  font-size: 0.75rem;
+  padding-left: 0.35rem;
+  color: color(helper-text, base);
+  margin-top: 0.35rem;
+}
+
+.form__message {
+  max-width: 100%;
+  resize: vertical;
+  max-height: 12.5rem;
+}
+
+.form__button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.85rem 0;
+  background: transparent;
+  border: 1px solid color(button, base);
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.form__button:hover {
+  background-color: color(button, base);
+  color: color(white, 400);
+}
