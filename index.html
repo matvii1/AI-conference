@@ -39,6 +39,8 @@
 
         <!-- Not in flow for mobile -->
         <ul class="nav__list">
+          <i class="fa-solid fa-xmark nav__close"></i>
+
           <li class="nav__item">
             <a href="#!" class="nav__link">Join us</a>
           </li>
@@ -51,7 +53,7 @@
         </ul>
       </div>
     </nav>
-    <div class="hero-outer" hidden>
+    <div class="hero-outer">
       <main class="hero container">
         <div id="tsparticles"></div>
         <div class="hero__content">
@@ -71,7 +73,7 @@
       </main>
     </div>
     <div class="overlay">
-      <div class="timetable container" hidden>
+      <div class="timetable container">
         <h2 class="timetable__title">Timetable</h2>
         <ul class="timetable__list"></ul>
 
@@ -94,11 +96,16 @@
         </div>
       </div>
 
+      <div class="speakers container">
+        <h2 class="speakers__title">Speakers</h2>
+        <ul class="speakers__list"></ul>
+      </div>
+
       <div class="join-us">
         <h2 class="join-us__title">Join us</h2>
 
         <div class="join-us__grid">
-          <form class="join-us__form form" novalidate>
+          <form class="join-us__form form" method="POST" novalidate>
             <div class="form-inner-wrapper">
               <div class="input-group name-group">
                 <label class="input-label" for="name">Name *</label>
@@ -127,9 +134,13 @@
                   type="text"
                   name="message"
                   class="form__message input-field"
-                  placeholder=""></textarea>
+                  placeholder="Enter your message"></textarea>
               </div>
               <button type="submit" class="form__button">Submit</button>
+
+              <p class="form__message--success">
+                Your message has been successfully sent!
+              </p>
             </div>
           </form>
           <div class="map-wrapper">

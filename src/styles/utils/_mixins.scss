@@ -12,6 +12,12 @@
   }
 }
 
+@mixin mediaNavChange {
+  @media (min-width: 548px) {
+    @content;
+  }
+}
+
 @mixin mediaTablet {
   @media (min-width: 768px) {
     @content;

@@ -5,8 +5,7 @@ $theme-colors: (
   helper-text: (
     base: hsl(0, 0%, 40%),
   ),
-  black:
-  (
+  black: (
     100: hsl(0, 0%, 97%),
     200: hsl(0, 0%, 70%),
     300: hsl(0, 0%, 20%),
@@ -34,8 +33,16 @@ $theme-colors: (
   green: (
     success: hsl(123, 38%, 57%),
   ),
+  alert: (
+    success-bg: hsl(137, 41%, 88%),
+    success-text: hsl(137, 41%, 30%),
+  ),
   button: (
     base: hsl(357, 52%, 45%),
+    hover: hsl(357, 52%, 35%),
+  ),
+  outline-button: (
+    base: hsl(240, 93%, 35%),
   ),
   pin: (
     base: hsl(236, 78%, 33%),

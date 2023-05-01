@@ -3,13 +3,15 @@ const nameGroup = form.querySelector(".name-group") as HTMLDivElement
 const emailGroup = form.querySelector(".email-group") as HTMLDivElement
 const emailInput = form.querySelector("#email") as HTMLInputElement
 const nameInput = form.querySelector("#name") as HTMLInputElement
-form.addEventListener("submit", listener)
-
 type InputType = "name" | "email" | "message"
-console.log("import here", import.meta.env.VITE_TELEGRAM_BOT_TOKEN)
-
+const successMessage = document.querySelector(
+  ".form__message--success"
+) as HTMLParagraphElement
+const formButton = document.querySelector(".form__button") as HTMLButtonElement
 const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN
 const BOT_CHAT_ID: number = import.meta.env.VITE_TELEGRAM_CHAT_ID
+
+form.addEventListener("submit", listener)
 
 function listener(event: Event) {
   event.preventDefault()
@@ -23,14 +25,16 @@ function listener(event: Event) {
     return
   }
 
-  try {
-    makeTelegramRequest(
-      `<b>New message from website</b> %0A Name: ${name} %0A Email ${email}%0AMessage: ${message}`
-    )
-  } catch (error) {
-    console.log("sent telegram message")
-  }
+  makeTelegramRequest(
+    `<b>New message from website</b> %0A Name: ${name} %0A Email ${email} %0AMessage: ${message}`
+  )
 
+  form.reset()
+
+  showSuccessMessage()
+  setTimeout(() => {
+    removeSuccessMessage()
+  }, 4000)
 }
 
 function validateFields(name: string, email: string) {
@@ -130,10 +134,20 @@ function wait(delay: number) {
   return new Promise((resolve) => setTimeout(resolve, delay))
 }
 
+function showSuccessMessage() {
+  formButton.classList.add("form__button--success")
+  successMessage.classList.add("form__message--success--active")
+}
+
+function removeSuccessMessage() {
+  formButton.classList.remove("form__button--success")
+  successMessage.classList.remove("form__message--success--active")
+}
 function makeTelegramRequest(text: string) {
   const TELEGRAM_BASE_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${BOT_CHAT_ID}&text=${text}&parse_mode=HTML`
 
   let api = new XMLHttpRequest()
+
   api.open("GET", TELEGRAM_BASE_URL, true)
-  api.send()
+  api.send(null)
 }

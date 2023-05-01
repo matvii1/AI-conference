@@ -30,8 +30,8 @@ $card-max-width: 428px;
   }
 
   @include mediaTablet {
-    padding: 0 0 0 1rem;
-    width: 300px;
+    padding-left: 1.85rem;
+    width: 100%;
   }
   @include mediaDesktop {
     width: 100%;
@@ -63,7 +63,7 @@ $card-max-width: 428px;
   &:focus,
   &:active {
     outline: none;
-    border: 1px solid rgb(6, 6, 173) !important;
+    border: 1px solid color(outline-button, base) !important;
   }
 }
 
@@ -122,17 +122,38 @@ $card-max-width: 428px;
 
 .form__button {
   width: 100%;
-  margin-top: 1rem;
   padding: 0.85rem 0;
-  background: transparent;
-  border: 1px solid color(button, base);
+  border: 0;
+  background-color: color(button, base);
+  color: color(white, 400);
   border-radius: 0.25rem;
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.1s ease-in-out;
+
+  &--success {
+    display: none;
+  }
+
+  &:hover {
+    background-color: color(button, hover);
+  }
 }
 
-.form__button:hover {
-  background-color: color(button, base);
-  color: color(white, 400);
+.form__message--success {
+  position: absolute;
+  top: -1000px;
+  border-radius: 0.25rem;
+  background-color: color(alert, success-bg);
+  color: color(alert, success-text);
+  padding: 1rem 1rem;
+
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.form__message--success--active {
+  position: relative;
+  top: 0;
+  opacity: 1;
 }

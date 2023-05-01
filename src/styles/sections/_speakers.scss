@@ -1,0 +1,11 @@
+@use "./helpers" as *;
+
+.speakers {
+	margin-top: $section-margin-top;
+
+	&__title {
+		text-align: center;
+	}
+
+	
+}

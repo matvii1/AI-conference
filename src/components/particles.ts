@@ -21,7 +21,7 @@ tsParticles.load("tsparticles", {
         distance: 20,
       },
       grab: {
-        distance: 300,
+        distance: 200,
         line_linked: {
           opacity: 0.1,
         }
@@ -32,7 +32,7 @@ tsParticles.load("tsparticles", {
     links: {
       enable: true,
       opacity: 0.1,
-      distance: 200,
+      distance: 100,
       color: {
         value: "#0b0b0b",
       },
