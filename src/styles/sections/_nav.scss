@@ -10,12 +10,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1240px;
   }
 
   @include nav-shadow;
 
   &__list {
     display: flex;
+    font-size: 0.9rem;
     gap: 2rem;
     font-family: $font-secondary;
     text-transform: uppercase;

@@ -12,11 +12,11 @@ const hero_paragraph = document.querySelector(
 const popupOpenButtons = document.querySelectorAll(
   ".card__button"
 ) as NodeListOf<HTMLButtonElement>
-const timetable = document.querySelector(".timetable") as HTMLDivElement
 
 const popupTitle = document.querySelector(".popup__title") as HTMLHeadingElement
 const popupTime = document.querySelector(".popup__time") as HTMLParagraphElement
 const popupDesc = document.querySelector(".popup__desc") as HTMLParagraphElement
+
 const popupImg = document.querySelector(".popup__img") as HTMLImageElement
 
 popupOpenButtons.forEach((button) => {

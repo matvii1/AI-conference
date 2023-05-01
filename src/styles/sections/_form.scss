@@ -123,6 +123,7 @@ $card-max-width: 428px;
 .form__button {
   width: 100%;
   padding: 0.85rem 0;
+  font-size: 0.9rem;
   border: 0;
   background-color: color(button, base);
   color: color(white, 400);
@@ -142,7 +143,7 @@ $card-max-width: 428px;
 
 .form__message--success {
   position: absolute;
-  top: -1000px;
+  top: -1000%;
   border-radius: 0.25rem;
   background-color: color(alert, success-bg);
   color: color(alert, success-text);

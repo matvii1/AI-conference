@@ -13,7 +13,7 @@
 }
 
 @mixin mediaNavChange {
-  @media (min-width: 548px) {
+  @media (min-width: 547px) {
     @content;
   }
 }

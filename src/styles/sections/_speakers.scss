@@ -1,11 +1,62 @@
 @use "./helpers" as *;
 
 .speakers {
-	margin-top: $section-margin-top;
+  margin-top: $section-margin-top;
 
-	&__title {
-		text-align: center;
-	}
+  &__title {
+    text-align: center;
+  }
 
-	
+  &__list {
+    margin-top: $section-within-margin-top;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+
+  &__item {
+    border-radius: 0.25rem;
+    min-height: 250px;
+    background: hsl(0, 0%, 96%);
+  }
+}
+
+.speaker {
+  padding: 1.25rem;
+  min-height: 350px;
+  font-family: $font-secondary;
+
+  &__img-wrapper {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    max-width: 35%;
+
+    @include mediaMobile {
+      max-width: 130px;
+    }
+
+    @include mediaTablet {
+      max-width: 150px;
+    }
+  }
+
+  &__img {
+    border-radius: 100%;
+  }
+
+  &__info {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  &__desc {
+    line-height: 1.25;
+    font-size: 0.9rem;
+    text-align: left;
+    margin-top: 0.75rem;
+  }
 }

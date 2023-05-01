@@ -23,15 +23,15 @@
     <script defer type="module" src="/src/main.ts"></script>
   </head>
   <body>
-    <nav class="nav">
+    <nav class="nav" id="home">
       <div class="nav__inner nav-container">
         <div class="nav__logo">
-          <a href="#">
+          <a href="#home">
             <img src="./logo.svg" alt="logo" />
           </a>
         </div>
 
-        <div class="burger burger-active">
+        <div class="burger">
           <span class="burger__line"></span>
           <span class="burger__line"></span>
           <span class="burger__line"></span>
@@ -42,13 +42,13 @@
           <i class="fa-solid fa-xmark nav__close"></i>
 
           <li class="nav__item">
-            <a href="#!" class="nav__link">Join us</a>
+            <a href="#join-us" class="nav__link">Join us</a>
           </li>
           <li>
-            <a href="#!" class="nav__link">About us</a>
+            <a href="#" class="nav__link">About us</a>
           </li>
           <li>
-            <a href="#!" class="nav__link">Timetable</a>
+            <a href="#timetable" class="nav__link">Timetable</a>
           </li>
         </ul>
       </div>
@@ -73,7 +73,7 @@
       </main>
     </div>
     <div class="overlay">
-      <div class="timetable container">
+      <div class="timetable container" id="timetable">
         <h2 class="timetable__title">Timetable</h2>
         <ul class="timetable__list"></ul>
 
@@ -98,10 +98,90 @@
 
       <div class="speakers container">
         <h2 class="speakers__title">Speakers</h2>
-        <ul class="speakers__list"></ul>
+        <ul class="speakers__list">
+          <li class="speakers__item speaker">
+            <div class="speaker__img-wrapper">
+              <img src="https://fakeimg.pl/400x400/abc/" class="speaker__img" />
+            </div>
+
+            <div class="speaker__info">
+              <h2 class="speaker__name">Mark Anderson</h2>
+              <p class="speaker__desc">
+                Mark Anderson is an accomplished expert in artificial
+                intelligence with a passion for developing intelligent systems
+                that can revolutionize the way we live and work. He is a
+                seasoned researcher and developer with a deep understanding of
+                cutting-edge technologies in the field of AI
+              </p>
+            </div>
+          </li>
+          <li class="speakers__item speaker">
+            <div class="speaker__img-wrapper">
+              <img src="https://fakeimg.pl/400x400/abc/" class="speaker__img" />
+            </div>
+
+            <div class="speaker__info">
+              <h2 class="speaker__name">Sarah Johnson</h2>
+              <p class="speaker__desc">
+                A young, ambitious entrepreneur with a passion for technology
+                and innovation. Sarah started her own software company at a
+                young age and has quickly become a rising star in the tech
+                industry. She is known for her bold ideas and willingness to
+                take risks.
+              </p>
+            </div>
+          </li>
+          <li class="speakers__item speaker">
+            <div class="speaker__img-wrapper">
+              <img src="https://fakeimg.pl/400x400/abc/" class="speaker__img" />
+            </div>
+
+            <div class="speaker__info">
+              <h2 class="speaker__name">Jennifer Williams</h2>
+              <p class="speaker__desc">
+                Jennifer Williams is a highly experienced machine learning
+                expert who has dedicated her career to developing and improving
+                algorithms that enable machines to learn from data. With a PhD
+                in computer science from a top-tier university
+              </p>
+            </div>
+          </li>
+          <li class="speakers__item speaker">
+            <div class="speaker__img-wrapper">
+              <img src="https://fakeimg.pl/400x400/abc/" class="speaker__img" />
+            </div>
+
+            <div class="speaker__info">
+              <h2 class="speaker__name">Andrew Smith</h2>
+              <p class="speaker__desc">
+                Andrew Smith is a seasoned expert in natural language processing
+                (NLP), with over a decade of experience working in the field. He
+                holds a PhD in computer science from a prestigious university,
+                where he conducted groundbreaking research in the area of
+                machine learning for NLP applications.
+              </p>
+            </div>
+          </li>
+          <li class="speakers__item speaker">
+            <div class="speaker__img-wrapper">
+              <img src="https://fakeimg.pl/400x400/abc/" class="speaker__img" />
+            </div>
+
+            <div class="speaker__info">
+              <h2 class="speaker__name">Rebecca Jones</h2>
+              <p class="speaker__desc">
+                Rebecca Jones is a leading expert in the field of artificial
+                intelligence (AI) and its impact on various industries. With
+                over 15 years of experience working in the tech industry,
+                Rebecca has gained a deep understanding of the potential of AI
+                to transform the way we live and work.
+              </p>
+            </div>
+          </li>
+        </ul>
       </div>
 
-      <div class="join-us">
+      <div class="join-us" id="join-us">
         <h2 class="join-us__title">Join us</h2>
 
         <div class="join-us__grid">
@@ -149,7 +229,12 @@
         </div>
       </div>
 
-      <footer></footer>
+      <footer class="footer">
+        <div class="footer__inner container">
+          <div>1</div>
+          <div>2</div>
+        </div>
+      </footer>
     </div>
 
     <script

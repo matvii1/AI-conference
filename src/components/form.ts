@@ -53,12 +53,6 @@ function validateFields(name: string, email: string) {
   const isNameWithSpecialChar =
     specialCharRegex.test(name.toString()) && !isNameEmpty
 
-  if (isNameEmpty) {
-    showError("name", "Name is required")
-
-    isError = true
-  }
-
   if (isNameWithNumbers || isNameWithSpecialChar) {
     showError("name", "Name should not contain numbers or special characters")
 
@@ -71,14 +65,20 @@ function validateFields(name: string, email: string) {
     isError = true
   }
 
-  if (isEmailEmpty) {
-    showError("email", "Email is required")
+  if (!isEmailValid) {
+    showError("email", "Please enter valid email address")
 
     isError = true
   }
 
-  if (!isEmailValid) {
-    showError("email", "Please enter valid email address")
+  if (isNameEmpty) {
+    showError("name", "Name is required")
+
+    isError = true
+  }
+
+  if (isEmailEmpty) {
+    showError("email", "Email is required")
 
     isError = true
   }
@@ -129,10 +129,6 @@ function showError(type: InputType, message: string) {
     parent.classList.remove("email-group--error")
   })
 })
-
-function wait(delay: number) {
-  return new Promise((resolve) => setTimeout(resolve, delay))
-}
 
 function showSuccessMessage() {
   formButton.classList.add("form__button--success")

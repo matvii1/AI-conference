@@ -8,14 +8,18 @@
 @use "./utils/vars" as *;
 @use "./sections/form";
 @use "./sections/speakers";
+@use "./sections/footer";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2.25rem;
+}
 
 body {
   min-width: 320px;
   min-height: 100vh;
   font-family: $font-primary;
 }
-
-// development
 
 * {
   // outline: 1px solid palevioletred;
