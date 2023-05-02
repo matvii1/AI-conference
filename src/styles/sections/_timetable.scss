@@ -21,9 +21,13 @@
 }
 
 .card {
+  opacity: 0;
+  transform: translateY(15%);
   position: relative;
   display: flex;
   gap: 1rem;
+
+  transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
 
   &__time {
     font-family: $font-secondary;
@@ -131,7 +135,6 @@
     gap: 1.3rem;
 
     @include mediaTablet {
-      flex-direction: row-reverse;
       align-items: center;
       gap: 1.75rem;
     }
@@ -145,7 +148,7 @@
   }
 
   &__img {
-    max-width: 100%;
+    min-width: 100%;
 
     @include mediaBigPhone {
       width: 100%;

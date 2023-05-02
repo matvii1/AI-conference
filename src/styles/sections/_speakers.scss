@@ -17,20 +17,24 @@
 
   &__item {
     border-radius: 0.25rem;
-    min-height: 250px;
     background: hsl(0, 0%, 96%);
   }
 }
 
 .speaker {
   padding: 1.25rem;
-  min-height: 350px;
   font-family: $font-secondary;
+
+  @include mediaTablet {
+    min-height: 470px;
+  }
 
   &__img-wrapper {
     display: flex;
     margin: 0 auto;
     width: 100%;
+    height: 150px;
+    aspect-ratio: 1 / 1;
     justify-content: center;
     align-items: center;
     max-width: 35%;
@@ -54,9 +58,56 @@
   }
 
   &__desc {
-    line-height: 1.25;
-    font-size: 0.9rem;
+    line-height: 1.35;
+    font-size: 0.95rem;
     text-align: left;
     margin-top: 0.75rem;
+  }
+}
+
+.glide {
+  display: none;
+  position: relative;
+
+  @include mediaTablet {
+    display: block;
+  }
+  margin-top: $section-within-margin-top;
+}
+.glide__slide {
+  align-self: stretch;
+}
+
+.speakers__list {
+  @include mediaTablet {
+    display: none !important;
+  }
+}
+
+.glide__arrows {
+  position: absolute;
+  top: -3.35rem;
+  right: 0rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.glide__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+
+  background: color(white, 400);
+  border: 1px solid color(button, base);
+  color: color(button, base);
+  border-radius: 0.15rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+
+  &:hover {
+    background-color: color(white, slider-bg-hover);
   }
 }

@@ -31,7 +31,7 @@ tsParticles.load("tsparticles", {
   particles: {
     links: {
       enable: true,
-      opacity: 0.1,
+      opacity: 0.3,
       distance: 100,
       color: {
         value: "#0b0b0b",

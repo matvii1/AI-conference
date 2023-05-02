@@ -3,7 +3,7 @@
 .footer {
 	border-top: 1px solid black;
   padding: 1.25rem;
-	margin-top: $section-margin-top / 2;
+	margin-top: calc($section-margin-top / 2);
 
 
 	&__inner {

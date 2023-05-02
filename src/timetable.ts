@@ -21,7 +21,7 @@ export const schedule: ISchedule[] = [
       "The conference organizers will deliver opening remarks and introduce the theme and goals of the event.",
     fullDesc:
       " The conference organizers will welcome attendees, deliver opening remarks, and introduce the theme and goals of the event. They will also acknowledge and thank the sponsors and partners who made the conference possible.",
-    img: "./speaker-2.jpg",
+    img: "https://picsum.photos/1200/600",
   },
   {
     id: 3,

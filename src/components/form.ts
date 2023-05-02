@@ -26,7 +26,7 @@ function listener(event: Event) {
   }
 
   makeTelegramRequest(
-    `<b>New message from website</b> %0A Name: ${name} %0A Email ${email} %0AMessage: ${message}`
+    `<b>New message from website</b>%0A Name: ${name}%0A Email ${email}%0AMessage: ${message}`
   )
 
   form.reset()
@@ -91,12 +91,17 @@ function showError(type: InputType, message: string) {
     case "name":
       const nameText = nameGroup.querySelector(".input-helper-text")
 
-      if (!nameText) {
+      if (!nameText?.textContent) {
         nameGroup.classList.add("name-group--error")
         nameGroup.insertAdjacentHTML(
           "beforeend",
           `
-				<p class="input-helper-text">${message}</p>`
+          <div class="input-helper-text-wrapper">
+            <i class="fa-solid fa-triangle-exclamation error-icon"></i>
+            <p class="input-helper-text">
+              ${message}
+            </p>
+          </div>`
         )
       } else {
         nameText.textContent = message
@@ -107,12 +112,15 @@ function showError(type: InputType, message: string) {
     case "email":
       const emailText = emailGroup.querySelector(".input-helper-text")
 
-      if (!emailText) {
+      if (!emailText?.textContent) {
         emailGroup.classList.add("email-group--error")
         emailGroup.insertAdjacentHTML(
           "beforeend",
           `
-				<p class="input-helper-text">${message}</p>`
+          <div class="input-helper-text-wrapper">
+            <i class="fa-solid fa-triangle-exclamation error-icon"></i>
+            <p class="input-helper-text">${message}</p>
+          </div>`
         )
       } else {
         emailText.textContent = message
@@ -124,7 +132,7 @@ function showError(type: InputType, message: string) {
   input.addEventListener("focus", () => {
     const parent = input.parentElement as HTMLDivElement
 
-    parent.querySelector(".input-helper-text")?.remove()
+    parent.querySelector(".input-helper-text-wrapper")?.remove()
     parent.classList.remove("name-group--error")
     parent.classList.remove("email-group--error")
   })

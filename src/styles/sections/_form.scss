@@ -107,11 +107,23 @@ $card-max-width: 428px;
   background: white;
 }
 
+.input-helper-text-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+
+  padding-left: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.error-icon {
+  font-size: 0.85rem;
+  color: color(red, error);
+}
+
 .input-helper-text {
   font-size: 0.75rem;
-  padding-left: 0.35rem;
   color: color(helper-text, base);
-  margin-top: 0.35rem;
 }
 
 .form__message {

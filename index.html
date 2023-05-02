@@ -21,6 +21,11 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
       rel="stylesheet" />
     <script defer type="module" src="/src/main.ts"></script>
+
+    <!-- Glide -->
+    <link
+      rel="stylesheet"
+      href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
   </head>
   <body>
     <nav class="nav" id="home">
@@ -98,10 +103,131 @@
 
       <div class="speakers container">
         <h2 class="speakers__title">Speakers</h2>
+
+        <!-- Glide -->
+        <div class="glide">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <li class="glide__slide">
+                <div class="speakers__item speaker">
+                  <div class="speaker__img-wrapper">
+                    <img
+                      src="./speakers/speaker-mark.jpg"
+                      class="speaker__img" />
+                  </div>
+
+                  <div class="speaker__info">
+                    <h2 class="speaker__name">Mark Anderson</h2>
+                    <p class="speaker__desc">
+                      Mark Anderson is an accomplished expert in artificial
+                      intelligence with a passion for developing intelligent
+                      systems that can revolutionize the way we live and work.
+                      He is a seasoned researcher and developer with a deep
+                      understanding of cutting-edge technologies in the field of
+                      AI
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="speakers__item speaker">
+                  <div class="speaker__img-wrapper">
+                    <img
+                      src="./speakers/speaker-sarah.jpg"
+                      class="speaker__img" />
+                  </div>
+
+                  <div class="speaker__info">
+                    <h2 class="speaker__name">Sarah Johnson</h2>
+                    <p class="speaker__desc">
+                      A young, ambitious entrepreneur with a passion for
+                      technology and innovation. Sarah started her own software
+                      company at a young age and has quickly become a rising
+                      star in the tech industry. She is known for her bold ideas
+                      and willingness to take risks.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="speakers__item speaker">
+                  <div class="speaker__img-wrapper">
+                    <img
+                      src="./speakers/speaker-jennifer.jpg"
+                      class="speaker__img" />
+                  </div>
+
+                  <div class="speaker__info">
+                    <h2 class="speaker__name">Jennifer Williams</h2>
+                    <p class="speaker__desc">
+                      Jennifer Williams is a highly experienced machine learning
+                      expert who has dedicated her career to developing and
+                      improving algorithms that enable machines to learn from
+                      data. With a PhD in computer science from a top-tier
+                      university
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="speakers__item speaker">
+                  <div class="speaker__img-wrapper">
+                    <img
+                      src="./speakers/speaker-andrew.jpg"
+                      class="speaker__img" />
+                  </div>
+
+                  <div class="speaker__info">
+                    <h2 class="speaker__name">Andrew Smith</h2>
+                    <p class="speaker__desc">
+                      Andrew Smith is a seasoned expert in natural language
+                      processing (NLP), with over a decade of experience working
+                      in the field. He holds a PhD in computer science from a
+                      prestigious university, where he conducted groundbreaking
+                      research in the area of machine learning for NLP
+                      applications.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="speakers__item speaker">
+                  <div class="speaker__img-wrapper">
+                    <img
+                      src="./speakers/speaker-rebecca.jpg"
+                      class="speaker__img" />
+                  </div>
+
+                  <div class="speaker__info">
+                    <h2 class="speaker__name">Rebecca Jones</h2>
+                    <p class="speaker__desc">
+                      Rebecca Jones is a leading expert in the field of
+                      artificial intelligence (AI) and its impact on various
+                      industries. With over 15 years of experience working in
+                      the tech industry, Rebecca has gained a deep understanding
+                      of the potential of AI to transform the way we live and
+                      work.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+              <i class="fa-solid fa-angle-left"></i>
+            </button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
+          </div>
+        </div>
+
         <ul class="speakers__list">
           <li class="speakers__item speaker">
             <div class="speaker__img-wrapper">
-              <img src="https://fakeimg.pl/400x400/abc/" class="speaker__img" />
+              <img src="./speakers/speaker-mark.jpg" class="speaker__img" />
             </div>
 
             <div class="speaker__info">
@@ -117,7 +243,7 @@
           </li>
           <li class="speakers__item speaker">
             <div class="speaker__img-wrapper">
-              <img src="https://fakeimg.pl/400x400/abc/" class="speaker__img" />
+              <img src="./speakers/speaker-sarah.jpg" class="speaker__img" />
             </div>
 
             <div class="speaker__info">
@@ -133,7 +259,7 @@
           </li>
           <li class="speakers__item speaker">
             <div class="speaker__img-wrapper">
-              <img src="https://fakeimg.pl/400x400/abc/" class="speaker__img" />
+              <img src="./speakers/speaker-jennifer.jpg" class="speaker__img" />
             </div>
 
             <div class="speaker__info">
@@ -148,7 +274,7 @@
           </li>
           <li class="speakers__item speaker">
             <div class="speaker__img-wrapper">
-              <img src="https://fakeimg.pl/400x400/abc/" class="speaker__img" />
+              <img src="./speakers/speaker-andrew.jpg" class="speaker__img" />
             </div>
 
             <div class="speaker__info">
@@ -164,7 +290,7 @@
           </li>
           <li class="speakers__item speaker">
             <div class="speaker__img-wrapper">
-              <img src="https://fakeimg.pl/400x400/abc/" class="speaker__img" />
+              <img src="./speakers/speaker-rebecca.jpg" class="speaker__img" />
             </div>
 
             <div class="speaker__info">

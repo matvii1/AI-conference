@@ -35,3 +35,8 @@ body {
     backdrop-filter: blur(2px);
   }
 }
+
+.is-animated {
+  opacity: 1;
+  transform: translate(0);
+}
