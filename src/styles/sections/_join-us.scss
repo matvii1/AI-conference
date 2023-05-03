@@ -13,33 +13,47 @@
   }
 
   &__grid {
+    display: grid;
     margin-top: $section-within-margin-top;
 
     @include mediaMobile {
-      display: grid;
       grid-template-rows: auto;
+      grid-template-areas:
+        "map"
+        "form";
       gap: 2.5rem;
     }
 
     @include mediaTablet {
-      display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
       gap: 2rem;
+
+      grid-template-areas: "form map";
     }
 
     @include mediaDesktop {
       display: grid;
-      grid-template-columns: 550px 1fr;
+      grid-template-columns: minmax(550px, 0.75fr) minmax(600px, 1fr);
       column-gap: 2rem;
     }
   }
 }
 
 .map-wrapper {
-  flex-basis: 50%;
+  grid-area: map;
   position: relative;
-  height: 500px;
+  height: 250px;
   overflow-x: hidden;
+
+  @include mediaTablet {
+    height: 400px;
+  }
+
+  @include mediaDesktop {
+    height: 500px;
+  }
+
 }
 
 #map {

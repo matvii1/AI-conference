@@ -20,9 +20,13 @@ const map = new mapboxgl.Map({
 const marker = document.createElement("i") as HTMLElement
 marker.className = "fa-sharp fa-solid fa-location-dot map-pin"
 
-// map.scrollZoom.disable()
+map.scrollZoom.disable()
 new mapboxgl.Marker(marker, { anchor: "bottom" })
   .setLngLat(PCU_CENTER)
   .addTo(map)
+
+const nav = new mapboxgl.NavigationControl()
+
+map.addControl(nav)
 
 map.on("load", () => map.resize())

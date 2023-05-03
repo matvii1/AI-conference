@@ -3,6 +3,7 @@
 $card-max-width: 428px;
 
 .join-us__form {
+  grid-area: form;
   font-family: $font-secondary;
 
   width: 100%;
