@@ -7,7 +7,12 @@ type InputType = "name" | "email" | "message"
 const successMessage = document.querySelector(
   ".form__message--success"
 ) as HTMLParagraphElement
+const errorMessage = document.querySelector(
+  ".form__message--error"
+) as HTMLParagraphElement
 const formButton = document.querySelector(".form__button") as HTMLButtonElement
+const inputs = [nameInput, emailInput]
+
 const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN
 const BOT_CHAT_ID: number = import.meta.env.VITE_TELEGRAM_CHAT_ID
 
@@ -22,19 +27,32 @@ function listener(event: Event) {
   const { isError } = validateFields(name.toString(), email.toString())
 
   if (isError) {
+    shakeForm()
+
     return
   }
 
-  makeTelegramRequest(
-    `<b>New message from website</b>%0A Name: ${name}%0A Email ${email}%0AMessage: ${message}`
-  )
+  const telegramMessage = `<b>New message from website</b>%0A Name: ${name}%0A Email ${email}%0AMessage: ${message}`
+
+  const res = makeTelegramRequest(telegramMessage)
+
+  if (res) {
+    shakeForm()
+    showErrorFormMessage()
+
+    setTimeout(() => {
+      removeErrorFormMessage()
+    }, 3000)
+
+    return
+  }
 
   form.reset()
 
-  showSuccessMessage()
+  showSuccessFormMessage()
   setTimeout(() => {
-    removeSuccessMessage()
-  }, 4000)
+    removeSuccessFormMessage()
+  }, 3000)
 }
 
 function validateFields(name: string, email: string) {
@@ -128,30 +146,73 @@ function showError(type: InputType, message: string) {
   }
 }
 
-;[nameInput, emailInput].forEach((input) => {
-  input.addEventListener("focus", () => {
-    const parent = input.parentElement as HTMLDivElement
+removeErrorMessageOnFocus()
 
-    parent.querySelector(".input-helper-text-wrapper")?.remove()
-    parent.classList.remove("name-group--error")
-    parent.classList.remove("email-group--error")
-  })
-})
-
-function showSuccessMessage() {
+function showSuccessFormMessage() {
   formButton.classList.add("form__button--success")
   successMessage.classList.add("form__message--success--active")
 }
 
-function removeSuccessMessage() {
+function removeSuccessFormMessage() {
   formButton.classList.remove("form__button--success")
   successMessage.classList.remove("form__message--success--active")
 }
-function makeTelegramRequest(text: string) {
+
+function showErrorFormMessage() {
+  formButton.classList.add("form__button--error")
+  errorMessage.classList.add("form__message--error--active")
+}
+
+function removeErrorFormMessage() {
+  formButton.classList.remove("form__button--error")
+  errorMessage.classList.remove("form__message--error--active")
+}
+
+function makeTelegramRequest(text: string): boolean {
+  let error = false
   const TELEGRAM_BASE_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${BOT_CHAT_ID}&text=${text}&parse_mode=HTML`
 
-  let api = new XMLHttpRequest()
+  let xhr = new XMLHttpRequest()
 
-  api.open("GET", TELEGRAM_BASE_URL, true)
-  api.send(null)
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        error = false
+      } else {
+        error = true
+      }
+    } else {
+      error = true
+    }
+  }
+
+  xhr.open("GET", TELEGRAM_BASE_URL, false)
+
+  try {
+    xhr.send(null)
+  } catch (error) {
+    error = true
+  }
+
+  return error
+}
+
+function shakeForm() {
+  form.classList.add("shake-form")
+
+  setTimeout(() => {
+    form.classList.remove("shake-form")
+  }, 300)
+}
+
+function removeErrorMessageOnFocus() {
+  inputs.forEach((input) => {
+    input.addEventListener("focus", () => {
+      const parent = input.parentElement as HTMLDivElement
+
+      parent.querySelector(".input-helper-text-wrapper")?.remove()
+      parent.classList.remove("name-group--error")
+      parent.classList.remove("email-group--error")
+    })
+  })
 }
