@@ -1,4 +1,5 @@
-@use "../sections/helpers" as *;
+@use "./mixins" as *;
+@use "./vars" as *;
 
 .container {
   margin: 0 auto;

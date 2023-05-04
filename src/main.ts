@@ -1,6 +1,6 @@
 import "normalize.css"
 import "./components/glide.ts"
-import "./styles/index.scss"
+import "./styles/main.scss"
 import "./components/form.ts"
 import "./components/TimeTable/timetable.ts"
 import "./components/TimeTable/popup.ts"

@@ -1,6 +1,4 @@
-@use "helpers" as *;
-
-$card-max-width: 428px;
+@use "../abstracts" as *;
 
 .join-us__form {
   grid-area: form;

@@ -1,4 +1,4 @@
-@use "./helpers" as *;
+@use "../abstracts" as *;
 
 canvas {
   display: block;
@@ -22,5 +22,5 @@ canvas {
   position: relative;
   z-index: 1;
   background-color: #fff;
-  border-top: 1px solid color(black, 400)
+  border-top: 1px solid color(black, 400);
 }
