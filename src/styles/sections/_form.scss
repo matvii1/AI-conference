@@ -128,6 +128,7 @@
 .form__message {
   max-width: 100%;
   resize: vertical;
+  min-height: 4rem;
   max-height: 12.5rem;
 }
 
@@ -198,16 +199,16 @@
 
 @keyframes shake {
   0% {
-    transform: translateX(5px);
+    transform: translateX(4px);
   }
   25% {
-    transform: translateX(-11px);
+    transform: translateX(-9px);
   }
   50% {
-    transform: translateX(5px);
+    transform: translateX(4px);
   }
   75% {
-    transform: translateX(-11px);
+    transform: translateX(-9px);
   }
   100% {
     transform: translateX(0);
