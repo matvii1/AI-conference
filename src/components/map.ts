@@ -1,8 +1,7 @@
 import mapboxgl from "mapbox-gl"
 import "mapbox-gl/dist/mapbox-gl.css"
 
-const ACCESS_TOKEN =
-  "pk.eyJ1IjoibWF0dmlpMSIsImEiOiJjbGZnaHc3cWgzemRpM3NudHpoZWg1NjJ6In0.ETAV7ISiLF3jGlpjJkgQeA"
+const ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN
 
 mapboxgl.accessToken = ACCESS_TOKEN
 
@@ -15,12 +14,29 @@ const map = new mapboxgl.Map({
   style: "mapbox://styles/mapbox/light-v11",
   center: PCU_CENTER,
   zoom: 12,
+  maxZoom: 21,
+  minZoom: 4,
+})
+
+map.on("wheel", (event: mapboxgl.MapWheelEvent & mapboxgl.EventData) => {
+  if (event.originalEvent.ctrlKey) {
+    return
+  }
+
+  if (event.originalEvent.metaKey) {
+    return
+  }
+
+  if (event.originalEvent.altKey) {
+    return
+  }
+
+  event.preventDefault()
 })
 
 const marker = document.createElement("i") as HTMLElement
 marker.className = "fa-sharp fa-solid fa-location-dot map-pin"
 
-map.scrollZoom.disable()
 new mapboxgl.Marker(marker, { anchor: "bottom" })
   .setLngLat(PCU_CENTER)
   .addTo(map)
