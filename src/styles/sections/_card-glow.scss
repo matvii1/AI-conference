@@ -1,0 +1,45 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+$clr-3: #694e8f;
+$clr-4: #d1474e;
+$clr-5: #e1dbc9;
+
+.card-glow {
+  position: relative;
+}
+
+.card-glow::after,
+.card-glow::before {
+  content: "";
+  position: absolute;
+  z-index: -4;
+  inset: -0.35rem 0 0 0;
+  background: $clr-5;
+  border-radius: inherit;
+  background: linear-gradient(
+    var(--gradient-angle),
+    $clr-4,
+    $clr-3,
+    $clr-5,
+    $clr-4,
+    $clr-3
+  );
+  animation: rotation 37s linear infinite;
+}
+
+.card-glow::after {
+  filter: blur(7px);
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
