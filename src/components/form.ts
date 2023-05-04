@@ -78,7 +78,7 @@ function validateFields(name: string, email: string) {
   }
 
   if (isNameShort) {
-    showError("name", "Name should contain at least two characters")
+    showError("name", "Name should contain at least three characters")
 
     isError = true
   }
