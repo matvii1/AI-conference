@@ -7,6 +7,8 @@
   position: relative;
   z-index: 2;
   background-color: color(white, 400);
+  padding-inline: 1rem;
+  max-width: $container-max-width;
 
   &__title {
     text-align: center;
@@ -34,7 +36,7 @@
 
     @include mediaDesktop {
       display: grid;
-      grid-template-columns: minmax(550px, 0.75fr) minmax(600px, 1fr);
+      grid-template-columns: minmax(550px, 0.75fr) 1fr;
       column-gap: 2rem;
     }
   }
@@ -53,7 +55,6 @@
   @include mediaDesktop {
     height: 500px;
   }
-
 }
 
 #map {

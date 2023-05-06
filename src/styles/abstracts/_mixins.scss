@@ -7,7 +7,7 @@
 }
 
 @mixin mediaBigPhone {
-  @media (min-width: 468px) {
+  @media (min-width: $container-mobile-max-width) {
     @content;
   }
 }
@@ -25,7 +25,7 @@
 }
 
 @mixin mediaDesktop {
-  @media (min-width: 1025px) {
+  @media (min-width: 1024px) {
     @content;
   }
 }

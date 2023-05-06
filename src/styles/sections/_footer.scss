@@ -27,6 +27,14 @@
     gap: 0.75rem;
   }
 
+  &__right {
+    align-self: auto;
+
+    @include mediaTablet {
+      align-self: flex-end;
+    }
+  }
+
   &__list {
     margin-top: 0.85rem;
     display: flex;

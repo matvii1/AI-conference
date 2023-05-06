@@ -5,17 +5,17 @@
   margin: 0 auto;
 
   @include mediaMobile {
-    max-width: 460px;
+    max-width: $container-mobile-max-width;
     padding-inline: $container-padding-inline;
   }
 
   @include mediaTablet {
-    max-width: 850px;
+    max-width: $container-tablet-max-width;
     padding-inline: $container-padding-inline;
   }
 
   @include mediaDesktop {
-    max-width: 1200px;
+    max-width: $container-max-width;
     padding-inline: $container-padding-inline;
   }
 }
