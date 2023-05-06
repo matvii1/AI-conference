@@ -1,3 +1,4 @@
+//#region selectors
 const form = document.querySelector(".join-us__form") as HTMLFormElement
 const nameGroup = form.querySelector(".name-group") as HTMLDivElement
 const emailGroup = form.querySelector(".email-group") as HTMLDivElement
@@ -11,6 +12,7 @@ const errorMessage = document.querySelector(
   ".form__message--error"
 ) as HTMLParagraphElement
 const formButton = document.querySelector(".form__button") as HTMLButtonElement
+//#endregion
 const inputs = [nameInput, emailInput]
 
 const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN
@@ -23,6 +25,7 @@ function listener(event: Event) {
   const { name, email, message } = Object.fromEntries(
     new FormData(form).entries()
   )
+  const hasMessage = message !== ""
 
   const { isError } = validateFields(name.toString(), email.toString())
 
@@ -32,7 +35,9 @@ function listener(event: Event) {
     return
   }
 
-  const telegramMessage = `<b>New message from website</b>%0A Name: ${name}%0A Email ${email}%0AMessage: ${message}`
+  const telegramMessage = hasMessage
+    ? `<b>New message from website</b>%0A Name: ${name}%0A Email ${email}%0AMessage: ${message}`
+    : `<b>New subscriber</b>%0A Name: ${name}%0A Email ${email}`
 
   const res = makeTelegramRequest(telegramMessage)
 
@@ -49,7 +54,7 @@ function listener(event: Event) {
 
   form.reset()
 
-  showSuccessFormMessage()
+  showSuccessFormMessage(hasMessage)
   setTimeout(() => {
     removeSuccessFormMessage()
   }, 3000)
@@ -148,7 +153,13 @@ function showError(type: InputType, message: string) {
 
 removeErrorMessageOnFocus()
 
-function showSuccessFormMessage() {
+function showSuccessFormMessage(hasMessage: boolean = false) {
+  if (hasMessage) {
+    successMessage.textContent = "Message sent successfully"
+  } else {
+    successMessage.textContent = "You have been successfully registered"
+  }
+
   formButton.classList.add("form__button--success")
   successMessage.classList.add("form__message--success--active")
 }

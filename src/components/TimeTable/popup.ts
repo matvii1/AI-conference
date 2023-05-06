@@ -1,9 +1,13 @@
+import cssVars from "../../styles/sections/_popup.scss?export"
 import { schedule } from "../../timetable"
+
+console.log(cssVars.popupTransitionTime);
 
 const popup = document.querySelector(".popup") as HTMLDivElement
 const popupCloseIcon = document.querySelector(
   ".popup__close-icon"
 ) as HTMLElement
+const popupContent = document.querySelector(".popup__content") as HTMLDivElement
 
 const hero_paragraph = document.querySelector(
   ".hero__desc"
@@ -34,7 +38,9 @@ popupCloseIcon.addEventListener("click", () => {
 function openPopup(button: HTMLButtonElement) {
   const cardData = getCardData(button)
 
-  popup.classList.add("active")
+  popupContent.style.opacity = "1"
+  popup.classList.add("popup--active")
+  popup.classList.add("back-blur")
   hero_paragraph.style.zIndex = "1"
   document.body.style.overflow = "hidden"
 
@@ -47,9 +53,16 @@ function openPopup(button: HTMLButtonElement) {
 }
 
 function closePopup() {
-  document.body.style.overflow = "auto"
+  const transitionTime = +cssVars.popupTransitionTime.slice(0, -1) * 1000
+  popupContent.style.opacity = "0"
+  popup.classList.remove("back-blur")
+
+  setTimeout(() => {
+    popup.classList.remove("popup--active")
+    document.body.style.overflow = "auto"
+  }, transitionTime)
+
   hero_paragraph.style.zIndex = "2"
-  popup.classList.remove("active")
 }
 
 function getCardData(button: HTMLButtonElement) {

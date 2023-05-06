@@ -1,0 +1,137 @@
+@use "../abstracts/" as *;
+
+$popup-transition-time: 0.2s;
+
+:export {
+  popupTransitionTime: $popup-transition-time;
+}
+
+.popup {
+  position: fixed;
+  inset: 0 0 0 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  z-index: -2;
+  height: 0;
+  min-width: 300px;
+  max-width: 100%;
+  height: 100dvh;
+
+  padding-inline: 0.75rem;
+
+  font-family: $font-secondary;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  transition: background-color $popup-transition-time ease-in-out,
+    backdrop-filter $popup-transition-time ease-in-out;
+
+  &__content {
+    position: relative;
+    max-width: 540px;
+    min-height: 250px;
+    background-color: color(white, 400);
+    border-radius: 0.25rem;
+    padding: 4rem 2rem;
+    transition: opacity $popup-transition-time ease-in-out;
+
+    @include mediaTablet {
+      padding: 4rem;
+    }
+
+    @include mediaDesktop {
+      padding: 2.5rem 2.5rem 2rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+  }
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.2rem;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+
+    @include mediaTablet {
+      align-items: center;
+      gap: 1.75rem;
+    }
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  &__img {
+    min-width: 100%;
+
+    @include mediaBigPhone {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    min-width: 45%;
+    max-height: 250px;
+    border-radius: 0.25rem;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__desc {
+    align-self: flex-start;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+
+  &__close-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+
+    padding: 0.25rem;
+    background: color(card-white, base);
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    font-size: 1.1rem;
+  }
+}
+
+.popup.popup--active {
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+  height: 100dvh;
+  z-index: 100;
+  transform: translateY(0);
+}
+
+.back-blur {
+  backdrop-filter: blur(1px);
+  background-color: rgba(hsl(0, 0%, 0%), 0.3);
+}

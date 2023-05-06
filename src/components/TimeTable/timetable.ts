@@ -27,7 +27,7 @@ schedule.forEach((card) => {
         </div>
         
 				<button class="card__button">
-					See more <i class="fa-solid fa-arrow-right-long card__button__icon"></i>
+					See details <i class="fa-solid fa-arrow-right-long card__button__icon"></i>
 				</button>
 			</div>
 		</li>`

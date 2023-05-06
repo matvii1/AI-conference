@@ -6,6 +6,7 @@ canvas {
 
 #tsparticles {
   background-color: color(white, 400);
+  overflow: hidden;
   position: fixed;
   filter: blur(1px);
   z-index: 1;
@@ -16,6 +17,18 @@ canvas {
   left: 0;
   margin: 0;
   cursor: pointer;
+
+  @include mediaMobile {
+    visibility: hidden;
+    position: absolute;
+    top: -100000px;
+  }
+
+  @include mediaTablet {
+    visibility: visible;
+    position: block;
+    top: 0;
+  }
 }
 
 .overlay {

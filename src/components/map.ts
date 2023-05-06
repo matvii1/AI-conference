@@ -14,8 +14,8 @@ const map = new mapboxgl.Map({
   style: "mapbox://styles/mapbox/light-v11",
   center: PCU_CENTER,
   zoom: 12,
-  maxZoom: 21,
-  minZoom: 4,
+  maxZoom: 18,
+  minZoom: 5,
 })
 
 map.on("wheel", (event: mapboxgl.MapWheelEvent & mapboxgl.EventData) => {
