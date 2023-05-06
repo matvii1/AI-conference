@@ -1,8 +1,8 @@
 import cssVars from "../../styles/sections/_popup.scss?export"
 import { schedule } from "../../timetable"
+import { ISchedule } from "../../types/Schedule"
 
-console.log(cssVars.popupTransitionTime);
-
+//#region Selectors
 const popup = document.querySelector(".popup") as HTMLDivElement
 const popupCloseIcon = document.querySelector(
   ".popup__close-icon"
@@ -20,8 +20,8 @@ const popupOpenButtons = document.querySelectorAll(
 const popupTitle = document.querySelector(".popup__title") as HTMLHeadingElement
 const popupTime = document.querySelector(".popup__time") as HTMLParagraphElement
 const popupDesc = document.querySelector(".popup__desc") as HTMLParagraphElement
-
 const popupImg = document.querySelector(".popup__img") as HTMLImageElement
+//#endregion
 
 popupOpenButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -65,7 +65,7 @@ function closePopup() {
   hero_paragraph.style.zIndex = "2"
 }
 
-function getCardData(button: HTMLButtonElement) {
+function getCardData(button: HTMLButtonElement): ISchedule | undefined {
   const closestCard = button.closest(".card") as HTMLDivElement
   const foundCardData = schedule.find(
     (el) => +el.id === Number(closestCard!.dataset.id)

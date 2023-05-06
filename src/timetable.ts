@@ -10,7 +10,7 @@ export const schedule: ISchedule[] = [
       "Attendees can check in and pick up their badges and conference materials.",
     fullDesc:
       "Doors are open, and attendees can register, pick up their badges and conference materials before the event starts. This is a great opportunity to connect with fellow attendees and network before the conference begins.",
-    img: "https://picsum.photos/1200/600",
+    img: "https://picsum.photos/600/600",
   },
   {
     id: 2,

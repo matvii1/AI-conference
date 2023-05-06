@@ -1,3 +1,5 @@
+import { normalizeString } from "../utils/normalizeString"
+
 //#region selectors
 const form = document.querySelector(".join-us__form") as HTMLFormElement
 const nameGroup = form.querySelector(".name-group") as HTMLDivElement
@@ -27,7 +29,10 @@ function listener(event: Event) {
   )
   const hasMessage = message !== ""
 
-  const { isError } = validateFields(name.toString(), email.toString())
+  const { isError } = validateFields(
+    normalizeString(name),
+    normalizeString(email)
+  )
 
   if (isError) {
     shakeForm()
@@ -36,8 +41,14 @@ function listener(event: Event) {
   }
 
   const telegramMessage = hasMessage
-    ? `<b>New message from website</b>%0A Name: ${name}%0A Email ${email}%0AMessage: ${message}`
-    : `<b>New subscriber</b>%0A Name: ${name}%0A Email ${email}`
+    ? `<b>New message from website</b>%0A Name: ${normalizeString(
+        name
+      )}%0A Email ${normalizeString(email)}%0AMessage: ${normalizeString(
+        message
+      )}`
+    : `<b>New subscriber</b>%0A Name: ${normalizeString(
+        name
+      )}%0A Email ${normalizeString(email)}`
 
   const res = makeTelegramRequest(telegramMessage)
 
@@ -70,11 +81,10 @@ function validateFields(name: string, email: string) {
 
   const isNameEmpty = name === ""
   const isEmailEmpty = email === ""
-  const isNameShort = name.toString().length < 3 && !isNameEmpty
-  const isEmailValid = emailRegex.test(email.toString()) && !isEmailEmpty
-  const isNameWithNumbers = numberRegex.test(name.toString()) && !isNameEmpty
-  const isNameWithSpecialChar =
-    specialCharRegex.test(name.toString()) && !isNameEmpty
+  const isNameShort = name.length < 3 && !isNameEmpty
+  const isEmailValid = emailRegex.test(email) && !isEmailEmpty
+  const isNameWithNumbers = numberRegex.test(name) && !isNameEmpty
+  const isNameWithSpecialChar = specialCharRegex.test(name) && !isNameEmpty
 
   if (isNameWithNumbers || isNameWithSpecialChar) {
     showError("name", "Name should not contain numbers or special characters")

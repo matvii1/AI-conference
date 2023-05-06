@@ -10,7 +10,7 @@ schedule.forEach((card) => {
   insertAfter(
     timetable,
     `<li class="timetable__item card" data-id="${card.id}">
-			<p class="card__time">${card.startTime}</p>
+			<time datetime="2023-05-26 20:00" class="card__time">${card.startTime}</time>
 			<div class="card__content">
         <div>
           <h2 class="card__title">
