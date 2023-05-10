@@ -29,6 +29,7 @@
 
     @include mediaMobile {
       margin: 0;
+      visibility: hidden;
       padding: 2rem;
       position: fixed;
       top: 0px;
@@ -49,10 +50,11 @@
     }
 
     @include mediaNavChange {
+      visibility: visible;
       position: static;
       inset: 0 0 0 0;
       padding: 0;
-      transform: translate(0);
+      transform: translateX(0);
       background: none;
       width: max-content;
       flex-direction: row;
@@ -62,6 +64,7 @@
 
   &__list--active {
     transform: translateX(0);
+    visibility: visible;
   }
 
   &__link {
