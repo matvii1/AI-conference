@@ -1,4 +1,3 @@
-import cssVars from "../../styles/sections/_popup.scss?export"
 import { schedule } from "../../timetable"
 import { ISchedule } from "../../types/Schedule"
 
@@ -53,14 +52,13 @@ function openPopup(button: HTMLButtonElement) {
 }
 
 function closePopup() {
-  const transitionTime = +cssVars.popupTransitionTime.slice(0, -1) * 1000
   popupContent.style.opacity = "0"
   popup.classList.remove("back-blur")
 
   setTimeout(() => {
     popup.classList.remove("popup--active")
     document.body.style.overflow = "auto"
-  }, transitionTime)
+  }, 1000 * 2)
 
   hero_paragraph.style.zIndex = "2"
 }

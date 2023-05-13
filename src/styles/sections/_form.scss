@@ -30,10 +30,11 @@
 
   @include mediaTablet {
     padding-left: 1.85rem;
-    width: 100%;
+    padding: 0;
   }
+
   @include mediaDesktop {
-    width: 100%;
+    padding: 0;
   }
 }
 
@@ -153,7 +154,9 @@
   }
 
   &:hover {
-    background-color: color(button, hover);
+    @include mouse-device {
+      background-color: color(button, hover);
+    }
   }
 }
 

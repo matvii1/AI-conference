@@ -11,18 +11,3 @@ body {
   min-height: 100vh;
   font-family: $font-primary;
 }
-
-@media (max-width: 320px) {
-  body::after {
-    content: "";
-    position: fixed;
-    z-index: 9999;
-    inset: 0 0 0 0;
-    background: rgba(10, 10, 10, 0.2);
-    backdrop-filter: blur(2px);
-  }
-}
-
-// * {
-//   outline: 1px dashed indigo;
-// }

@@ -32,12 +32,11 @@
   &__img-wrapper {
     display: flex;
     margin: 0 auto;
-    width: 100%;
     height: 150px;
-    aspect-ratio: 1 / 1;
+    min-width: 150px;
+    max-width: 35%;
     justify-content: center;
     align-items: center;
-    max-width: 35%;
 
     @include mediaMobile {
       max-width: 130px;
@@ -108,6 +107,8 @@
   transition: background-color 0.15s ease-in-out;
 
   &:hover {
-    background-color: color(white, slider-bg-hover);
+    @include mouse-device {
+      background-color: color(white, slider-bg-hover);
+    }
   }
 }
