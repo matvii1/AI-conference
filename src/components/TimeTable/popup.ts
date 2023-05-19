@@ -58,7 +58,7 @@ function closePopup() {
   setTimeout(() => {
     popup.classList.remove("popup--active")
     document.body.style.overflow = "auto"
-  }, 1000 * 2)
+  }, 100 * 2)
 
   hero_paragraph.style.zIndex = "2"
 }
