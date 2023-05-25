@@ -1,73 +1,81 @@
-$theme-colors: (
-  nav: (
-    base: hsl(0, 0%, 97%),
-  ),
-  helper-text: (
-    base: hsl(0, 0%, 40%),
-  ),
-  black: (
-    100: hsl(0, 0%, 97%),
-    200: hsl(0, 0%, 70%),
-    300: hsl(0, 0%, 20%),
-    400: hsl(0, 0%, 0%),
-    footer-icon: hsl(218, 17%, 27%),
-    footer-icon-border: hsl(240, 6%, 93%),
-    footer-border: hsl(218, 17%, 87%),
-  ),
-  background: (
-    white: #f5f6fa,
-  ),
-  card-white: (
-    base: hsl(0, 0%, 96%),
-    light: hsl(0, 0%, 99%),
-  ),
-  white: (
-    200: hsl(0, 0%, 600%),
-    300: hsl(0, 0%, 80%),
-    400: hsl(0, 0%, 100%),
-    slider-bg-hover: hsl(0, 0%, 96%),
-  ),
-  red: (
-    300: hsl(4, 62%, 65%),
-    400: hsl(4, 62%, 55%),
-    500: hsl(4, 62%, 45%),
-    700: hsl(4, 95%, 47%),
-    error: hsl(4, 90%, 58%),
-  ),
-  green: (
-    success: hsl(123, 38%, 57%),
-  ),
-  alert: (
-    success-bg: hsl(137, 41%, 88%),
-    success-text: hsl(137, 41%, 30%),
-    error-bg: hsl(355, 74%, 91%),
-    error-text: hsl(355, 61%, 28%),
-  ),
-  button: (
-    base: hsl(357, 52%, 45%),
-    hover: hsl(357, 52%, 35%),
-  ),
-  outline-button: (
-    base: hsl(240, 93%, 35%),
-  ),
-  pin: (
-    base: hsl(236, 78%, 33%),
-  ),
-);
+:root {
+  --time-text: hsl(0, 0%, 70%);
+  --error-color: hsl(4, 90%, 58%);
+  --error-bg: hsl(355, 74%, 91%);
+  --error-text: hsl(355, 61%, 28%);
 
-@function color($color, $tone) {
-  @if map-has-key($theme-colors, $color) {
-    $color: map-get($theme-colors, $color);
+  --form-button-bg: hsl(357, 58%, 36%);
+  --form-button-color: hsl(0, 0%, 100%);
+  --form-button-hover: hsl(357, 58%, 46%);
 
-    @if map-has-key($color, $tone) {
-      $tone: map-get($color, $tone);
-      @return $tone;
-    }
+  --light-details-button-hover: hsl(357, 55%, 33%);
+  --dark-details-button-hover: hsl(357, 46%, 55%);
 
-    @warn "unknown tone `#{$tone}` in color";
-    @return null;
-  }
+  --success-color: hsl(123, 38%, 57%);
+  --success-bg: hsl(137, 41%, 88%);
+  --success-text: hsl(137, 41%, 30%);
 
-  @warn "unknown color `#{$color}` in palette";
-  @return null;
+  --input-border: hsl(0, 0%, 72%);
+  --light-input-bg: hsl(0, 0%, 100%);
+  --dark-input-bg: hsl(260, 9%, 13%);
+
+  --light-text: hsl(231, 17%, 16%);
+  --dark-text: hsl(0, 0%, 97%);
+
+  --light-bg: hsl(0, 0%, 100%);
+  --dark-bg: hsl(224, 71%, 4%);
+
+  --dark-border: hsl(217, 33%, 17%);
+  --light-border: hsl(214, 32%, 91%);
+
+  --dark-bg-lighter: hsl(260, 9%, 13%);
+  --light-bg-lighter: hsl(0, 0%, 98%);
+
+  --light-link-hover: hsl(357, 58%, 36%);
+  --dark-link-hover: hsl(0, 0%, 69%);
+
+  --light-button: hsl(357, 52%, 45%);
+  --dark-button: hsl(356, 58%, 48%);
+
+  --light-glide-hover: hsl(0, 100%, 97%); 
+  --dark-glide-hover: hsl(357, 100%, 10%); 
+
+  --light-shadow-color: hsla(0, 0%, 0%, 0.2);
+  --dark-shadow-color: hsla(0, 0%, 100%, 0);
+
+  --dark-mobile-nav-bg: rgba(3, 7, 18, 0.65);
+  --light-mobile-nav-bg: rgba(255, 255, 255, 0.9);
+
+  --link-hover: var(--light-link-hover);
+  --bg-color: var(--light-bg);
+  --theme-color: var(--light-theme);
+  --shadow-color: var(--light-shadow-color);
+  --button-color: var(--light-button);
+
+  --bg-lighter: var(--light-bg-lighter);
+  --base-border-color: var(--light-border);
+  --base-text-color: var(--light-text);
+
+  --mobile-nav-bg: var(--light-mobile-nav-bg);
+
+  --input-bg: var(--light-input-bg);
+  --glide-hover: var(--light-glide-hover);
+
+  --details-button-hover: var(--light-details-button-hover);
+}
+
+.page--theme--dark {
+  --text-color: var(--dark-text);
+  --bg-color: var(--dark-bg);
+  --theme-color: var(--dark-theme);
+  --link-hover: var(--dark-link-hover);
+  --shadow-color: var(--dark-shadow-color);
+  --button-color: var(--dark-button);
+  --bg-lighter: var(--dark-bg-lighter);
+  --base-border-color: var(--dark-border);
+  --mobile-nav-bg: var(--dark-mobile-nav-bg);
+  --base-text-color: var(--dark-text);
+  --input-bg: var(--dark-input-bg);
+  --glide-hover: var(--dark-glide-hover);
+  --details-button-hover: var(--dark-details-button-hover);
 }

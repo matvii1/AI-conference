@@ -3,7 +3,6 @@
 .join-us__form {
   grid-area: form;
   font-family: $font-secondary;
-
   width: 100%;
 
   display: flex;
@@ -47,6 +46,14 @@
   margin-bottom: 1.6rem;
 }
 
+.page--theme--dark .input-group:not(:last-child) {
+  margin-bottom: 2.2rem;
+}
+
+.input-group:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
 .input-field {
   @include mediaMobile {
     width: 100%;
@@ -58,42 +65,43 @@
 
   padding: 1rem 1.25rem;
   border-radius: 0.25rem;
-  border: 1px solid color(white, 300);
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+}
 
-  &:focus,
-  &:active {
-    outline: none;
-    border: 1px solid color(outline-button, base) !important;
-  }
+.page--theme--dark .input-field {
+  border: none;
+  caret-color: #fff;
+  color: var(--base-text-color);
 }
 
 .name-group--success,
 .email-group--success {
   & .input-field {
-    border: 1px solid color(green, success);
+    border: 1px solid var(--success-color);
   }
 
   & .input-label {
-    color: color(green, success);
+    color: var(--success-color);
   }
 
   & .input-helper-text {
-    color: color(green, success);
+    color: var(--success-color);
   }
 }
 
 .name-group--error,
 .email-group--error {
   & .input-field {
-    border: 1px solid color(red, error);
+    border: 1px solid var(--error-color);
   }
 
   & .input-label {
-    color: color(red, error);
+    color: var(--error-color);
   }
 
   & .input-helper-text {
-    color: color(red, error);
+    color: var(--error-color);
   }
 }
 
@@ -103,8 +111,14 @@
   padding: 0.25rem;
   left: 0.8rem;
   top: -0.7rem;
-  color: color(black, 300);
-  background: white;
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+.page--theme--dark .input-label {
+  left: 0rem;
+  top: -1.4rem;
+  background: transparent;
 }
 
 .input-helper-text-wrapper {
@@ -118,12 +132,12 @@
 
 .error-icon {
   font-size: 0.85rem;
-  color: color(red, error);
+  color: var(--error-color);
 }
 
 .input-helper-text {
   font-size: 0.75rem;
-  color: color(helper-text, base);
+  color: var(--error-color);
 }
 
 .form__message {
@@ -138,8 +152,8 @@
   padding: 0.85rem 0;
   font-size: 0.9rem;
   border: 0;
-  background-color: color(button, base);
-  color: color(white, 400);
+  background-color: var(--form-button-bg);
+  color: var(--form-button-color);
   border-radius: 0.25rem;
   text-transform: uppercase;
   cursor: pointer;
@@ -155,7 +169,7 @@
 
   &:hover {
     @include mouse-device {
-      background-color: color(button, hover);
+      background-color: var(--form-button-hover);
     }
   }
 }
@@ -164,8 +178,8 @@
   position: absolute;
   top: -1000%;
   border-radius: 0.25rem;
-  background-color: color(alert, success-bg);
-  color: color(alert, success-text);
+  background-color: var(--success-bg);
+  color: var(--success-text);
   padding: 1rem 1rem;
 
   opacity: 0;
@@ -182,8 +196,8 @@
   position: absolute;
   top: -1000%;
   border-radius: 0.25rem;
-  color: color(alert, error-text);
-  background-color: color(alert, error-bg);
+  background-color: var(--error-bg);
+  color: var(--error-text);
   padding: 1rem 1rem;
 
   opacity: 0;

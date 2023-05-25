@@ -1,8 +1,7 @@
 @use "../abstracts" as *;
 
 .footer {
-  border-top: 1px solid color(black, footer-border);
-  background: color(white, 400);
+  background: var(--bg-color);
   padding: 1.25rem 1.25rem 2.5rem;
   margin-top: $section-margin-top;
 
@@ -50,19 +49,29 @@
   &__link {
     padding: 0.25rem 0.32rem;
     border-radius: 0.22rem;
-    border: 1px solid color(black, footer-icon-border);
     font-size: 1.2rem;
-    color: color(black, footer-icon);
     transition: color 0.1s ease-in-out;
+    border: 1px solid var(--base-border-color);
+    color: var(--base-text-color);
 
     &:hover {
       @include mouse-device {
-        color: color(button, base);
+        color: var(--link-hover);
       }
     }
   }
 
   &__logo {
     max-width: 120px;
+    color: var(--text-color);
   }
+}
+
+.page--theme--dark .footer {
+  background: var(--dark-bg);
+  color: var(--text-color);
+}
+
+.page--theme--dark .footer__link {
+  color: var(--text-color);
 }

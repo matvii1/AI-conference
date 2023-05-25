@@ -1,48 +1,66 @@
 import mapboxgl from "mapbox-gl"
 import "mapbox-gl/dist/mapbox-gl.css"
+import { isDarkTheme } from "./theme-toggle"
 
 const ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN
-
 mapboxgl.accessToken = ACCESS_TOKEN
 
-const PCU_LON = 14.43381
-const PCU_LAT = 50.08714
-const PCU_CENTER: [number, number] = [PCU_LON, PCU_LAT]
+const switchToggle = document.querySelector(
+  ".switch-toggle"
+) as HTMLButtonElement
 
-const map = new mapboxgl.Map({
-  container: "map",
-  style: "mapbox://styles/mapbox/light-v11",
-  center: PCU_CENTER,
-  zoom: 12,
-  maxZoom: 18,
-  minZoom: 5,
+if (isDarkTheme()) {
+  initMap("dark")
+} else {
+  initMap("light")
+}
+
+switchToggle.addEventListener("click", () => {
+  setTimeout(() => {
+    initMap(isDarkTheme() ? "dark" : "light")
+  }, 0)
 })
 
-map.on("wheel", (event: mapboxgl.MapWheelEvent & mapboxgl.EventData) => {
-  if (event.originalEvent.ctrlKey) {
-    return
-  }
+function initMap(theme: "dark" | "light") {
+  const PCU_LON = 14.43381
+  const PCU_LAT = 50.08714
+  const PCU_CENTER: [number, number] = [PCU_LON, PCU_LAT]
 
-  if (event.originalEvent.metaKey) {
-    return
-  }
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: `mapbox://styles/mapbox/${theme}-v11`,
+    center: PCU_CENTER,
+    zoom: 12,
+    maxZoom: 18,
+    minZoom: 5,
+  })
 
-  if (event.originalEvent.altKey) {
-    return
-  }
+  map.on("wheel", (event: mapboxgl.MapWheelEvent & mapboxgl.EventData) => {
+    if (event.originalEvent.ctrlKey) {
+      return
+    }
 
-  event.preventDefault()
-})
+    if (event.originalEvent.metaKey) {
+      return
+    }
 
-const marker = document.createElement("i") as HTMLElement
-marker.className = "fa-sharp fa-solid fa-location-dot map-pin"
+    if (event.originalEvent.altKey) {
+      return
+    }
 
-new mapboxgl.Marker(marker, { anchor: "bottom" })
-  .setLngLat(PCU_CENTER)
-  .addTo(map)
+    event.preventDefault()
+  })
 
-const nav = new mapboxgl.NavigationControl()
+  const marker = document.createElement("i") as HTMLElement
+  marker.className = "fa-sharp fa-solid fa-location-dot map-pin"
 
-map.addControl(nav)
+  new mapboxgl.Marker(marker, { anchor: "bottom" })
+    .setLngLat(PCU_CENTER)
+    .addTo(map)
 
-map.on("load", () => map.resize())
+  const nav = new mapboxgl.NavigationControl()
+
+  map.addControl(nav)
+
+  map.on("load", () => map.resize())
+}

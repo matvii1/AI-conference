@@ -17,7 +17,9 @@
 
   &__item {
     border-radius: 0.25rem;
-    background: hsl(0, 0%, 96%);
+    background: var(--nav-bg);
+    border: 1px solid var(--base-border-color);
+    color: var(--text-color);
   }
 }
 
@@ -99,16 +101,27 @@
   width: 1.75rem;
   height: 1.75rem;
 
-  background: color(white, 400);
-  border: 1px solid color(button, base);
-  color: color(button, base);
+  background: var(--bg-color);
+  border: 1px solid var(--form-button-bg);
+  color: var(--button-color);
   border-radius: 0.15rem;
   cursor: pointer;
   transition: background-color 0.15s ease-in-out;
 
   &:hover {
     @include mouse-device {
-      background-color: color(white, slider-bg-hover);
+      background-color: var(--glide-hover);
+    }
+  }
+}
+
+.page--theme--dark .glide__arrow {
+  background: var(--nav-bg);
+  border: 1px solid var(--dark-button);
+
+  &:hover {
+    @include mouse-device {
+      background-color: var(--glide-hover);
     }
   }
 }
