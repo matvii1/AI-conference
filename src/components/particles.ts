@@ -4,21 +4,26 @@ const switchToggle = document.querySelector(
   ".switch-toggle"
 ) as HTMLButtonElement
 
-let particleDots = isDarkTheme() ? "#fff" : "#0b0b0b"
+type Color = "#fff" | "#0b0b0b"
+type Opacity = 0.7 | 0.3
+
+const darkOpacity = 0.7
+const lightOpacity = 0.3
+
+const initialOpacity = isDarkTheme() ? darkOpacity : lightOpacity
+const initialColor: Color = isDarkTheme() ? "#fff" : "#0b0b0b"
 
 switchToggle.addEventListener("click", () => {
   if (isDarkTheme()) {
-    particleDots = "#fff"
+    loadParticles("#fff", darkOpacity)
   } else {
-    particleDots = "#0b0b0b"
+    loadParticles("#0b0b0b", lightOpacity)
   }
-
-  loadParticles()
 })
 
-loadParticles()
+loadParticles(initialColor, initialOpacity)
 
-function loadParticles() {
+function loadParticles(color: Color, opacity: Opacity) {
   tsParticles.load("tsparticles", {
     interactivity: {
       events: {
@@ -52,17 +57,17 @@ function loadParticles() {
     particles: {
       links: {
         enable: true,
-        opacity: 0.3,
+        opacity: opacity,
         distance: 100,
         color: {
-          value: particleDots,
+          value: color,
         },
       },
       move: {
         enable: true,
       },
       color: {
-        value: particleDots,
+        value: color,
       },
     },
     opacity: {
