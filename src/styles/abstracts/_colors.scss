@@ -46,9 +46,13 @@
   --dark-mobile-nav-bg: hsla(224, 71%, 4%, 0.65);
   --light-mobile-nav-bg: hsla(0, 0%, 100%, 0.9);
 
-  --light-theme-toggle-hover-bg: hsl(210, 40%, 96%);
+  --light-theme-toggle-hover-bg: hsl(0, 0%, 99%);
   --dark-theme-toggle-hover-bg: hsl(217, 33%, 17%);
 
+  --light-popup-close-bg: hsl(0, 0%, 97%);
+  --dark-popup-close-bg: hsl(0, 0%, 15%);
+
+  --popup-close-bg: var(--light-popup-close-bg);
   --link-hover: var(--light-link-hover);
   --bg-color: var(--light-bg);
   --theme-color: var(--light-theme);
@@ -69,6 +73,7 @@
 }
 
 .page--theme--dark {
+  --popup-close-bg: var(--dark-popup-close-bg);
   --text-color: var(--dark-text);
   --bg-color: var(--dark-bg);
   --theme-color: var(--dark-theme);
