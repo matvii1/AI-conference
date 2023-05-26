@@ -47,3 +47,9 @@
     @content;
   }
 }
+
+@mixin onDark {
+  .page--theme--dark {
+    @content;
+  }
+}

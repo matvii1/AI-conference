@@ -1,4 +1,5 @@
 @use "../abstracts" as *;
+
 $mobile-nav-bg: rgba(3, 7, 18, 0.65);
 
 .nav {
@@ -43,7 +44,6 @@ $mobile-nav-bg: rgba(3, 7, 18, 0.65);
 
     @include mediaMobile {
       margin: 0;
-      visibility: hidden;
       padding: 2rem;
       position: fixed;
       top: 0px;
@@ -53,6 +53,7 @@ $mobile-nav-bg: rgba(3, 7, 18, 0.65);
       background: var(--mobile-nav-bg);
       color: var(--text-color);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
 
       transform: translateX(200%);
 
@@ -95,10 +96,10 @@ $mobile-nav-bg: rgba(3, 7, 18, 0.65);
   }
 
   &__close {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     position: absolute;
-    top: 1.25rem;
-    right: $container-padding-inline * 1.25;
+    top: 1.5rem;
+    right: $container-padding-inline * 2;
 
     @include mediaNavChange {
       display: none;
@@ -135,5 +136,49 @@ $mobile-nav-bg: rgba(3, 7, 18, 0.65);
 }
 
 .switch-toggle {
-  position: fixed;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  // transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--theme-toggle-bg);
+  }
+
+  &__icon {
+    color: var(--text-color);
+    font-size: 23px;
+    transition: all 0.3s;
+  }
+}
+
+.switch-toggle__icon--sun {
+  position: static;
+}
+
+@include onDark {
+  .switch-toggle__icon--sun {
+    scale: 0;
+    rotate: 90deg;
+    position: absolute;
+    top: -1000px;
+  }
+}
+
+.switch-toggle__icon--moon {
+  scale: 0;
+  rotate: -180deg;
+  position: absolute;
+  top: -1000px;
+}
+
+@include onDark {
+  .switch-toggle__icon--moon {
+    scale: 100%;
+    position: static;
+
+    rotate: -18deg;
+  }
 }

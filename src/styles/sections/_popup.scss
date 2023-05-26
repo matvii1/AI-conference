@@ -140,5 +140,6 @@ $popup-transition-time: 0.2s;
 
 .back-blur {
   backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   background-color: rgba(hsl(0, 0%, 0%), 0.3);
 }

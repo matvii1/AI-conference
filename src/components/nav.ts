@@ -22,10 +22,26 @@ function menuOpen() {
   burger.classList.add("burger-active")
   navList.classList.add("nav__list--active")
   body.classList.add("no-scroll")
+
+  document.addEventListener("click", blurClose)
 }
 
 function menuClose() {
   burger.classList.remove("burger-active")
   navList.classList.remove("nav__list--active")
   body.classList.remove("no-scroll")
+
+  document.removeEventListener("click", blurClose)
+}
+
+function blurClose(event: MouseEvent) {
+  const closestEl = event.target as HTMLElement
+  const isMenuOpen = navList.classList.contains("nav__list--active")
+  const isButtonClicked = closestEl.closest(".burger")
+  const isBlur =
+    isMenuOpen && !closestEl.closest(".nav__list") && !isButtonClicked
+
+  if (isBlur) {
+    menuClose()
+  }
 }
