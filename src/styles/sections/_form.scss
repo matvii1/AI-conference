@@ -64,7 +64,7 @@
   }
 
   padding: 1rem 1.25rem;
-  border-radius: 0.25rem;
+  border-radius: $bd-rad-025;
   border: 1px solid var(--input-border);
   background: var(--input-bg);
 }
@@ -154,7 +154,7 @@
   border: 0;
   background-color: var(--form-button-bg);
   color: var(--form-button-color);
-  border-radius: 0.25rem;
+  border-radius: $bd-rad-025;
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.1s ease-in-out;
@@ -177,7 +177,7 @@
 .form__message--success {
   position: absolute;
   top: -1000%;
-  border-radius: 0.25rem;
+  border-radius: $bd-rad-025;
   background-color: var(--success-bg);
   color: var(--success-text);
   padding: 1rem 1rem;
@@ -195,7 +195,7 @@
 .form__message--error {
   position: absolute;
   top: -1000%;
-  border-radius: 0.25rem;
+  border-radius: $bd-rad-025;
   background-color: var(--error-bg);
   color: var(--error-text);
   padding: 1rem 1rem;

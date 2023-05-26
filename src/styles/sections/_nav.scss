@@ -136,12 +136,12 @@ $mobile-nav-bg: rgba(3, 7, 18, 0.65);
 }
 
 .switch-toggle {
-  padding: 0.45rem 0.75rem;
-  border-radius: 0.25rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: $bd-rad-025;
   border: none;
   background-color: transparent;
   cursor: pointer;
-  // transition: background-color 0.2s;
+  transition: background-color 0.2s;
 
   &:hover {
     background-color: var(--theme-toggle-bg);
@@ -150,6 +150,11 @@ $mobile-nav-bg: rgba(3, 7, 18, 0.65);
   &__icon {
     color: var(--text-color);
     font-size: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    height: 23px;
     transition: all 0.3s;
   }
 }

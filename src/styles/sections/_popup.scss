@@ -31,7 +31,7 @@ $popup-transition-time: 0.2s;
     max-width: 540px;
     min-height: 250px;
     background-color: var(--bg-color);
-    border-radius: 0.25rem;
+    border-radius: $bd-rad-025;
     padding: 4rem 2rem;
     transition: opacity $popup-transition-time ease-in-out;
     color: var(--text-color);
@@ -91,7 +91,7 @@ $popup-transition-time: 0.2s;
 
     min-width: 45%;
     max-height: 250px;
-    border-radius: 0.25rem;
+    border-radius: $bd-rad-025;
   }
 
   &__title {

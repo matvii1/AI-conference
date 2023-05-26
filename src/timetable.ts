@@ -21,7 +21,7 @@ export const schedule: ISchedule[] = [
       "The conference organizers will deliver opening remarks and introduce the theme and goals of the event.",
     fullDesc:
       " The conference organizers will welcome attendees, deliver opening remarks, and introduce the theme and goals of the event. They will also acknowledge and thank the sponsors and partners who made the conference possible.",
-    img: "https://picsum.photos/1200/600",
+    img: "/speakers/speaker-andrew.jpg",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ export const schedule: ISchedule[] = [
     shortDesc: "Short",
     fullDesc:
       "Mark Anderson, an expert in artificial intelligence, will provide an overview of AI technology, including its history, current state, and future possibilities. This session is ideal for those who are new to AI and want to understand its basics.",
-    img: "https://picsum.photos/1200/600",
+    img: "/speakers/speaker-andrew.jpg",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ export const schedule: ISchedule[] = [
       "Sarah Johnson discusses the transformative role of AI in healthcare.",
     fullDesc:
       "Sarah Johnson will discuss how AI is transforming healthcare, from medical diagnosis to patient care. She will highlight the benefits, challenges, and potential future impact of AI in healthcare.",
-    img: "https://picsum.photos/1200/600",
+    img: "./speakers/speaker-andrew.jpg",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const schedule: ISchedule[] = [
     shortDesc: "A hands-on workshop for developing AI algorithms.",
     fullDesc:
       "This workshop is a practical session where attendees will learn how to develop AI algorithms. The workshop will cover topics such as data preparation, model building, and testing. Participants will work on real-world problems and get feedback from the workshop leader.",
-    img: "https://picsum.photos/1200/600",
+    img: "/speakers/speaker-andrew.jpg",
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ export const schedule: ISchedule[] = [
     fullDesc:
       "Attendees can take a break from the conference and enjoy a catered lunch while networking with other attendees. This is a great opportunity to connect with like-minded individuals and discuss the morning sessions.",
     icon: "mug-hot",
-    img: "https://picsum.photos/1200/600",
+    img: "/speakers/speaker-andrew.jpg",
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ export const schedule: ISchedule[] = [
     shortDesc: "Jennifer Williams explains the basics of machine learning.",
     fullDesc:
       "Jennifer Williams will provide an overview of machine learning, a subfield of AI that focuses on teaching machines to learn from data. She will discuss the different types of machine learning algorithms and their applications in real-world scenarios.",
-    img: "https://picsum.photos/1200/600",
+    img: "/speakers/speaker-andrew.jpg",
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ export const schedule: ISchedule[] = [
       "Andrew Smith discusses the challenges and opportunities of natural language processing.",
     fullDesc:
       "Andrew Smith will discuss natural language processing (NLP), a branch of AI that deals with the interaction between computers and humans using natural language. He will highlight the challenges and opportunities of NLP and how it is being used in various industries.",
-    img: "https://picsum.photos/1200/600",
+    img: "/speakers/speaker-andrew.jpg",
   },
   {
     id: 9,
@@ -94,7 +94,7 @@ export const schedule: ISchedule[] = [
     shortDesc: "A practical workshop for implementing AI in business.",
     fullDesc:
       "This workshop is a practical session where attendees will learn how to implement AI in business. The workshop will cover topics such as selecting the right AI technology, integrating AI into business processes, and measuring its impact on business performance.",
-    img: "https://picsum.photos/1200/600",
+    img: "/speakers/speaker-andrew.jpg",
   },
   {
     id: 10,
@@ -105,7 +105,7 @@ export const schedule: ISchedule[] = [
       "Rebecca Jones explores the potential of AI and its impact on the future.",
     fullDesc:
       "Rebecca Jones will discuss the potential of AI and its impact on various industries. She will explore the ethical and social implications of AI and how we can ensure that AI benefits everyone.",
-    img: "https://picsum.photos/1200/600",
+    img: "/speakers/speaker-andrew.jpg",
   },
   {
     id: 11,
@@ -116,6 +116,6 @@ export const schedule: ISchedule[] = [
       " The conference organizers will provide closing remarks, and attendees can network before leaving.",
     fullDesc:
       "The conference organizers will provide closing remarks, summarize the event highlights, and thank attendees, speakers, and sponsors for their contributions. This is also a",
-    img: "https://picsum.photos/1200/600",
+    img: "/speakers/speaker-andrew.jpg",
   },
 ]

@@ -5,7 +5,7 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/logo-dark.svg"
+      href="/logo-light.svg"
       media="(prefers-color-scheme: dark)" />
     <link
       rel="icon"
@@ -99,8 +99,26 @@
 
         <div class="nav__right-mobile">
           <button class="switch-toggle">
-            <i
-              class="fa-solid fa-sun switch-toggle__icon switch-toggle__icon--sun"></i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="switch-toggle__icon switch-toggle__icon--sun"
+              viewBox="0 0 25 25"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 3v1"></path>
+              <path d="M12 20v1"></path>
+              <path d="M3 12h1"></path>
+              <path d="M20 12h1"></path>
+              <path d="m18.364 5.636-.707.707"></path>
+              <path d="m6.343 17.657-.707.707"></path>
+              <path d="m5.636 5.636.707.707"></path>
+              <path d="m17.657 17.657.707.707"></path>
+            </svg>
+
             <i
               class="fa-solid fa-moon switch-toggle__icon switch-toggle__icon--moon"></i>
           </button>
@@ -111,8 +129,6 @@
             <span class="burger__line"></span>
           </div>
         </div>
-
-        <!-- Not in flow for mobile -->
 
         <ul class="nav__list">
           <i class="fa-solid fa-xmark nav__close"></i>
@@ -383,7 +399,7 @@
         <h2 class="join-us__title">Join us</h2>
 
         <div class="join-us__grid">
-          <form class="join-us__form form" method="POST" novalidate>
+          <form class="join-us__form form" action="" method="POST" novalidate>
             <div class="form-inner-wrapper">
               <div class="input-group name-group">
                 <label class="input-label" for="name">Name *</label>

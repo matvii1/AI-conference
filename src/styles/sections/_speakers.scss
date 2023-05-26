@@ -16,7 +16,7 @@
   }
 
   &__item {
-    border-radius: 0.25rem;
+    border-radius: $bd-rad-025;
     background: var(--nav-bg);
     border: 1px solid var(--base-border-color);
     color: var(--text-color);
