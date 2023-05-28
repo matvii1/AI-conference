@@ -22,13 +22,9 @@
 }
 
 .card {
-  opacity: 0;
-  transform: translateY(15%);
   position: relative;
   display: flex;
   gap: 1rem;
-
-  transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
 
   &__time {
     font-family: $font-secondary;
