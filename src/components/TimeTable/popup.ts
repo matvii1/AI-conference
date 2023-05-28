@@ -1,8 +1,5 @@
 import { schedule } from "../../timetable"
 import { ISchedule } from "../../types/Schedule"
-const { BASE_URL } = import.meta.env
-
-console.log(BASE_URL)
 
 //#region Selectors
 const popup = document.querySelector(".popup") as HTMLDivElement
@@ -48,7 +45,7 @@ function openPopup(button: HTMLButtonElement) {
     </div>
 
     <div class="popup__bottom">
-      <img src="${BASE_URL}${cardData?.img}" alt="speaker" class="popup__img" />
+      <img src="${cardData?.img}" alt="speaker" class="popup__img" />
       <p class="popup__desc">${cardData?.fullDesc}</p>
     </div>
     `
