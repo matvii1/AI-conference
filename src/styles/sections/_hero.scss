@@ -4,7 +4,7 @@
   position: relative;
 
   @include mediaMobile {
-    background-image: url("particles-static/particles-light-static.png");
+    background-image: url("/particles-static/particles-light-static.png");
     background-position: 50% 50%;
     background-size: 150%;
   }
