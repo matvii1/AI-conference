@@ -51,6 +51,12 @@ $popup-transition-time: 0.2s;
     gap: 2.8rem;
   }
 
+  &__content-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   &__top {
     display: flex;
     flex-wrap: wrap;

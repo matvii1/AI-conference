@@ -2,6 +2,22 @@
 
 .hero-outer {
   position: relative;
+
+  @include mediaMobile {
+    background-image: url("../../../public/particles-static/particles-light-static.png");
+    background-position: 50% 50%;
+    background-size: 150%;
+  }
+
+  @include mediaTablet {
+    background-image: none;
+  }
+}
+
+@include onDark {
+  .hero-outer {
+    background-image: url("../../../public/particles-static/particles-dark-static.png");
+  }
 }
 
 @mixin hero-item {

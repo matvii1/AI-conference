@@ -7,7 +7,9 @@ const popupCloseIcon = document.querySelector(
   ".popup__close-icon"
 ) as HTMLElement
 const popupContent = document.querySelector(".popup__content") as HTMLDivElement
-
+const popupBody = document.querySelector(
+  ".popup__content-body"
+) as HTMLDivElement
 const hero_paragraph = document.querySelector(
   ".hero__desc"
 ) as HTMLParagraphElement
@@ -16,10 +18,6 @@ const popupOpenButtons = document.querySelectorAll(
   ".card__button"
 ) as NodeListOf<HTMLButtonElement>
 
-const popupTitle = document.querySelector(".popup__title") as HTMLHeadingElement
-const popupTime = document.querySelector(".popup__time") as HTMLParagraphElement
-const popupDesc = document.querySelector(".popup__desc") as HTMLParagraphElement
-const popupImg = document.querySelector(".popup__img") as HTMLImageElement
 //#endregion
 
 popupOpenButtons.forEach((button) => {
@@ -37,18 +35,29 @@ popupCloseIcon.addEventListener("click", () => {
 function openPopup(button: HTMLButtonElement) {
   const cardData = getCardData(button)
 
+  const popupHTMLContent = `
+    <div class="popup__top">
+      <h2 class="popup__title">${cardData?.title}</h2>
+      <p class="popup__time">
+        <i class="fa-regular fa-clock"></i> 
+        ${cardData?.startTime} - ${cardData?.finishTime}
+      </p>
+    </div>
+
+    <div class="popup__bottom">
+      <img src="${cardData?.img}" alt="speaker" class="popup__img" />
+      <p class="popup__desc">${cardData?.fullDesc}</p>
+    </div>
+    `
+
   popupContent.style.opacity = "1"
+  hero_paragraph.style.zIndex = "1"
+
   popup.classList.add("popup--active")
   popup.classList.add("back-blur")
-  hero_paragraph.style.zIndex = "1"
   document.body.style.overflow = "hidden"
 
-  popupTitle.textContent = cardData?.title || "Error loading title"
-  popupTime.innerHTML =
-    `<i class="fa-regular fa-clock"></i> 
-    ${cardData?.startTime} - ${cardData?.finishTime}` || "00:00"
-  popupDesc.textContent = cardData?.fullDesc || "Error loading description"
-  popupImg.src = cardData?.img || "https://via.placeholder.com/150"
+  popupBody.innerHTML = popupHTMLContent
 }
 
 function closePopup() {
