@@ -18,6 +18,10 @@
   .hero-outer {
     background-image: url("/particles-static/particles-dark-static.png");
   }
+
+  @include mediaTablet {
+    background-image: none;
+  }
 }
 
 @mixin hero-item {
