@@ -86,8 +86,6 @@ $popup-transition-time: 0.2s;
   }
 
   &__img {
-    min-width: 100%;
-
     @include mediaBigPhone {
       width: 100%;
       height: 100%;
@@ -95,8 +93,7 @@ $popup-transition-time: 0.2s;
       object-position: center 40%;
     }
 
-    min-width: 45%;
-    max-height: 250px;
+    max-height: 250px !important;
     border-radius: $bd-rad-025;
   }
 

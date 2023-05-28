@@ -45,7 +45,8 @@ function openPopup(button: HTMLButtonElement) {
     </div>
 
     <div class="popup__bottom">
-      <img src="${cardData?.img}" alt="speaker" class="popup__img" />
+      <img src="${cardData?.img}" alt="speaker" class="popup__img" height="350px" width="auto"
+       />
       <p class="popup__desc">${cardData?.fullDesc}</p>
     </div>
     `
