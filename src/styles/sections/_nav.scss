@@ -144,7 +144,9 @@ $mobile-nav-bg: rgba(3, 7, 18, 0.65);
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: var(--theme-toggle-bg);
+    @include mouse-device {
+      background-color: var(--theme-toggle-bg);
+    }
   }
 
   &__icon {
