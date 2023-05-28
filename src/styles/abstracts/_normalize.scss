@@ -37,6 +37,11 @@ img {
   display: block;
 }
 
+button {
+  border: none;
+  background: transparent;
+}
+
 textarea {
   display: block;
 }
@@ -55,10 +60,6 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
 }
-
-// input:not(input:-webkit-autofill)::-webkit-contacts-auto-fill-button {
-//   background-color: #000;
-// }
 
 @include onDark {
   input:not(input:-webkit-autofill)::-webkit-contacts-auto-fill-button {

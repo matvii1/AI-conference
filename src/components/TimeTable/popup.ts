@@ -22,6 +22,8 @@ const popupOpenButtons = document.querySelectorAll(
 
 popupOpenButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    document.addEventListener("keyup", onKeyPress)
+
     openPopup(button)
   })
 })
@@ -71,6 +73,8 @@ function closePopup() {
   }, 100 * 2)
 
   hero_paragraph.style.zIndex = "2"
+
+  document.removeEventListener("keyup", onKeyPress)
 }
 
 function getCardData(button: HTMLButtonElement): ISchedule | undefined {
@@ -92,4 +96,12 @@ function closeOnBlur() {
       closePopup()
     }
   })
+
+  document.removeEventListener("keyup", onKeyPress)
+}
+
+function onKeyPress(e: KeyboardEvent) {
+  if (e.key === "Escape") {
+    closePopup()
+  }
 }

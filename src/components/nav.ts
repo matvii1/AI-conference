@@ -24,6 +24,7 @@ function menuOpen() {
   body.classList.add("no-scroll")
 
   document.addEventListener("click", blurClose)
+  document.addEventListener("keyup", onKeyPress)
 }
 
 function menuClose() {
@@ -32,6 +33,7 @@ function menuClose() {
   body.classList.remove("no-scroll")
 
   document.removeEventListener("click", blurClose)
+  document.removeEventListener("keyup", onKeyPress)
 }
 
 function blurClose(event: MouseEvent) {
@@ -42,6 +44,12 @@ function blurClose(event: MouseEvent) {
     isMenuOpen && !closestEl.closest(".nav__list") && !isButtonClicked
 
   if (isBlur) {
+    menuClose()
+  }
+}
+
+function onKeyPress(e: KeyboardEvent) {
+  if (e.key === "Escape") {
     menuClose()
   }
 }
