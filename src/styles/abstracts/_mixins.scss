@@ -1,37 +1,37 @@
 @use "./vars" as *;
 
 @mixin mediaMobile {
-  @media screen and (orientation: portrait) and (min-width: $smallest-screen) {
+  @media (min-width: $smallest-screen) {
     @content;
   }
 }
 
 @mixin mediaBigPhone {
-  @media screen and (orientation: portrait) and (min-width: $container-mobile-max-width) {
+  @media (min-width: $container-mobile-max-width) {
     @content;
   }
 }
 
 @mixin mediaNavChange {
-  @media screen and (orientation: portrait) and (min-width: 547px) {
+  @media (min-width: 547px) {
     @content;
   }
 }
 
 @mixin mediaTablet {
-  @media screen and (orientation: portrait) and (min-width: 768px) {
+  @media (min-width: 768px) {
     @content;
   }
 }
 
 @mixin mediaDesktop {
-  @media screen and (orientation: portrait) and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     @content;
   }
 }
 
 @mixin mediaDesktop-big {
-  @media screen and (orientation: portrait) and (min-width: 1281px) {
+  @media (min-width: 1281px) {
     @content;
   }
 }
