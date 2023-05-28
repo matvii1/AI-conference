@@ -27,6 +27,8 @@
   padding: 1.25rem;
   font-family: $font-secondary;
 
+  max-width: 370px;
+  margin: 0 auto;
   @include mediaTablet {
     min-height: 470px;
   }
@@ -115,13 +117,15 @@
   }
 }
 
-.page--theme--dark .glide__arrow {
-  background: var(--nav-bg);
-  border: 1px solid var(--dark-button);
+@include onDark {
+  .glide__arrow {
+    background: var(--nav-bg);
+    border: 1px solid var(--dark-button);
 
-  &:hover {
-    @include mouse-device {
-      background-color: var(--glide-hover);
+    &:hover {
+      @include mouse-device {
+        background-color: var(--glide-hover);
+      }
     }
   }
 }
