@@ -97,6 +97,7 @@ $mobile-nav-bg: rgba(3, 7, 18, 0.65);
   &__close {
     font-size: 1.6rem;
     position: absolute;
+    color: var(--base-text-color);
     top: 1rem;
     right: $container-padding-inline * 1.1;
     padding: 0.6rem 0.75rem;
