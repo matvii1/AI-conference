@@ -24,8 +24,8 @@
 .card {
   position: relative;
   display: grid;
-  grid-template-columns: 1.25rem auto;
-  gap: 1rem;
+  grid-template-columns: min-content auto;
+  gap: 0.5rem;
 
   &__time {
     font-family: $font-secondary;
@@ -34,6 +34,7 @@
     color: var(--time-text);
     width: 35px;
     justify-self: center;
+    text-align: end;
   }
 
   &__content {
