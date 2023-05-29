@@ -19,6 +19,7 @@ const inputs = [nameInput, emailInput]
 
 const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN
 const BOT_CHAT_ID: number = import.meta.env.VITE_TELEGRAM_CHAT_ID
+const REMOVE_TIME = 3000
 
 form.addEventListener("submit", listener)
 
@@ -58,7 +59,7 @@ function listener(event: Event) {
 
     setTimeout(() => {
       removeErrorFormMessage()
-    }, 3000)
+    }, REMOVE_TIME)
 
     return
   }
@@ -66,10 +67,10 @@ function listener(event: Event) {
   form.reset()
 
   showSuccessFormMessage(hasMessage)
-  
+
   setTimeout(() => {
     removeSuccessFormMessage()
-  }, 3000)
+  }, REMOVE_TIME)
 }
 
 function validateFields(name: string, email: string) {
@@ -170,24 +171,35 @@ function showSuccessFormMessage(hasMessage: boolean = false) {
   } else {
     successMessage.textContent = "You have been successfully registered"
   }
+  successMessage.style.opacity = "1"
 
   formButton.classList.add("form__button--success")
   successMessage.classList.add("form__message--success--active")
 }
 
 function removeSuccessFormMessage() {
-  formButton.classList.remove("form__button--success")
-  successMessage.classList.remove("form__message--success--active")
+  successMessage.style.opacity = "0"
+
+  setTimeout(() => {
+    formButton.classList.remove("form__button--success")
+    successMessage.classList.remove("form__message--success--active")
+  }, REMOVE_TIME / 10)
 }
 
 function showErrorFormMessage() {
+  successMessage.style.opacity = "1"
+
   formButton.classList.add("form__button--error")
   errorMessage.classList.add("form__message--error--active")
 }
 
 function removeErrorFormMessage() {
-  formButton.classList.remove("form__button--error")
-  errorMessage.classList.remove("form__message--error--active")
+  errorMessage.style.opacity = "0"
+
+  setTimeout(() => {
+    formButton.classList.remove("form__button--error")
+    errorMessage.classList.remove("form__message--error--active")
+  }, REMOVE_TIME / 10)
 }
 
 function makeTelegramRequest(text: string): boolean {
@@ -224,7 +236,7 @@ function shakeForm() {
 
   setTimeout(() => {
     form.classList.remove("shake-form")
-  }, 300)
+  }, REMOVE_TIME / 10)
 }
 
 function removeErrorMessageOnFocus() {

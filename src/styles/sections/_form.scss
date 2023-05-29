@@ -148,16 +148,14 @@
 }
 
 .form__button {
-  width: 100%;
-  padding: 0.85rem 0;
-  font-size: 0.9rem;
-  border: 0;
+  @include form-button-size(0);
+
   background-color: var(--form-button-bg);
   color: var(--form-button-color);
   border-radius: $bd-rad-025;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out, opacity 0.2s;
 
   &--success {
     display: none;
@@ -180,7 +178,7 @@
   border-radius: $bd-rad-025;
   background-color: var(--success-bg);
   color: var(--success-text);
-  padding: 1rem 1rem;
+  @include form-button-size(1rem);
 
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -198,7 +196,7 @@
   border-radius: $bd-rad-025;
   background-color: var(--error-bg);
   color: var(--error-text);
-  padding: 1rem 1rem;
+  @include form-button-size(1rem);
 
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
