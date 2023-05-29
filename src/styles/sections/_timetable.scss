@@ -23,7 +23,8 @@
 
 .card {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.25rem auto;
   gap: 1rem;
 
   &__time {
@@ -31,7 +32,8 @@
     font-size: 0.7rem;
     margin-top: 0.3rem;
     color: var(--time-text);
-    width: 30px;
+    width: 35px;
+    justify-self: center;
   }
 
   &__content {
