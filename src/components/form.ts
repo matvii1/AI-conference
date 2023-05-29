@@ -66,6 +66,7 @@ function listener(event: Event) {
   form.reset()
 
   showSuccessFormMessage(hasMessage)
+  
   setTimeout(() => {
     removeSuccessFormMessage()
   }, 3000)
