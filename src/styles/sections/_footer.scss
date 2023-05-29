@@ -4,6 +4,7 @@
   background: var(--bg-color);
   padding: 1.25rem 1.25rem 2.5rem;
   margin-top: $section-margin-top;
+  border-top: 1px solid var(--base-border-color);
 
   &__inner {
     display: flex;
@@ -71,11 +72,13 @@
   }
 }
 
-.page--theme--dark .footer {
-  background: var(--dark-bg);
-  color: var(--text-color);
-}
+@include onDark {
+  .footer {
+    background: var(--dark-bg);
+    color: var(--text-color);
+  }
 
-.page--theme--dark .footer__link {
-  color: var(--text-color);
+  .footer__link {
+    color: var(--text-color);
+  }
 }

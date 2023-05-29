@@ -54,6 +54,7 @@ function openPopup(button: HTMLButtonElement) {
     `
 
   popupContent.style.opacity = "1"
+  popupContent.classList.add("expanded")
   hero_paragraph.style.zIndex = "1"
 
   popup.classList.add("popup--active")
