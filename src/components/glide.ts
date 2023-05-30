@@ -7,7 +7,7 @@ import Glide, {
 new Glide(".glide", {
   type: "carousel",
   startAt: 0,
-  perView: 3,
+  perView: 4,
   gap: 15,
   focusAt: 0,
   swipeThreshold: false,
