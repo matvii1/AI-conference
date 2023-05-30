@@ -72,6 +72,10 @@
   }
 }
 
+.footer__inner.container {
+  padding-inline: 0;
+}
+
 @include onDark {
   .footer {
     background: var(--dark-bg);
