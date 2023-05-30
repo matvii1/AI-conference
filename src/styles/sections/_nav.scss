@@ -41,33 +41,34 @@ $mobile-nav-bg: rgba(3, 7, 18, 0.65);
     font-family: $font-secondary;
     text-transform: uppercase;
 
-    @include mediaMobile {
-      margin: 0;
-      padding: 2rem;
-      position: fixed;
-      top: 0px;
-      right: 0;
-      bottom: 0;
-      width: 75vw;
-      background: var(--mobile-nav-bg);
-      color: var(--text-color);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+    margin: 0;
+    padding: 2rem;
+    position: absolute;
+    height: 100dvh;
+    top: 0;
 
-      transform: translateX(200%);
+    right: 0;
+    bottom: 0;
+    width: 75vw;
+    background: var(--mobile-nav-bg);
+    color: var(--text-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+    transform: translateX(200%);
 
-      transition: transform 0.3s ease-in-out;
-    }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    transition: transform 0.3s ease-in-out;
+    // }
 
     @include mediaNavChange {
       visibility: visible;
       position: static;
-      inset: 0 0 0 0;
+      height: max-content;
       padding: 0;
       transform: translateX(0);
       background: none;

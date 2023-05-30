@@ -27,7 +27,7 @@ canvas {
 
   @include mediaTablet {
     visibility: visible;
-    position: block;
+    display: block;
     top: 0;
   }
 }
