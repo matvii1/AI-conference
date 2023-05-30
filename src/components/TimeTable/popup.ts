@@ -17,6 +17,7 @@ const hero_paragraph = document.querySelector(
 const popupOpenButtons = document.querySelectorAll(
   ".card__button"
 ) as NodeListOf<HTMLButtonElement>
+const app = document.getElementById("app") as HTMLDivElement
 
 //#endregion
 
@@ -59,7 +60,9 @@ function openPopup(button: HTMLButtonElement) {
 
   popup.classList.add("popup--active")
   popup.classList.add("back-blur")
-  document.body.style.overflow = "hidden"
+
+  app.style.overflowY = "hidden"
+  document.body.style.overflowY = "hidden"
 
   popupBody.innerHTML = popupHTMLContent
 }
@@ -70,7 +73,8 @@ function closePopup() {
 
   setTimeout(() => {
     popup.classList.remove("popup--active")
-    document.body.style.overflow = "auto"
+    app.style.overflowY = "auto"
+    document.body.style.overflowY = "auto"
   }, 100 * 2)
 
   hero_paragraph.style.zIndex = "2"
